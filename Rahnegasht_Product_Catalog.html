@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محصولات ره‌نگاشت</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1c1633; --navy-2:#2a2350; --teal:#1ebfcb; --teal-d:#0e8f99; --teal-soft:#e2f6f7;
+  --bg:#f6f7f9; --card:#ffffff; --ink:#1c1633; --muted:#626078; --line:#e4e4ec; --soft:#f0f0f5;
+  --int:#8a5a12; --int-bg:#fdf6ea; --int-line:#efdcb9;
+  --c-dr:#1c1633; --c-ash:#1ebfcb; --c-alb:#6c63d9; --c-mae:#e07a9a;
+  --c-out:#8aa0bf; --c-office:#b0b0bb; --c-dev:#e0a53c; --c-ovh:#a78bd0; --c-profit:#2f9e6a; --c-ref:#f08a4b; --c-ext:#c9c9d3;
+  --shadow:0 1px 2px rgba(28,22,51,.06),0 4px 16px rgba(28,22,51,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#13101f; --card:#1d1930; --ink:#efeef6; --muted:#a19fb6; --line:#2e2946; --soft:#252040;
+    --teal-soft:#16343a; --teal-d:#4fd3dc; --int:#eab968; --int-bg:#2a2217; --int-line:#4a3b20; --c-dr:#b9b3e6; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#13101f; --card:#1d1930; --ink:#efeef6; --muted:#a19fb6; --line:#2e2946; --soft:#252040;
+  --teal-soft:#16343a; --teal-d:#4fd3dc; --int:#eab968; --int-bg:#2a2217; --int-line:#4a3b20; --c-dr:#b9b3e6; --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;font-size:15px;line-height:1.85;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,p{margin:0}
+button,select,input{font:inherit;color:inherit}
+a{color:var(--teal-d)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.muted{color:var(--muted)}
+.int{display:none!important}
+body.internal .int{display:block!important}
+body.internal .int-inline{display:inline-flex!important}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:14px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;flex-shrink:0;cursor:pointer;background:none;border:0;padding:0}
+.logo svg{width:36px;height:32px;overflow:visible}
+.logo b{font-weight:800;font-size:17px}
+.menu-btn{background:var(--teal);color:var(--navy);border:0;border-radius:8px;padding:7px 12px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{background:none;border:0;color:#c9c5e0;padding:8px 11px;border-radius:8px;cursor:pointer;white-space:nowrap;font-size:14px}
+.tabs button:hover{color:#fff;background:rgba(255,255,255,.06)}
+.tabs button.on{color:#fff;background:rgba(30,191,203,.18);box-shadow:inset 0 -2px 0 var(--teal)}
+.tabs button.int{color:#f3cf8f}
+.lock{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#e7e4f5;border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;white-space:nowrap;margin-right:6px}
+.lock svg{width:14px;height:14px}
+body.internal .lock{background:#f3cf8f;color:var(--navy);border-color:#f3cf8f;font-weight:700}
+
+/* mega */
+.mega{position:fixed;top:64px;inset-inline:0;z-index:29;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(28,22,51,.18);display:none;max-height:calc(100vh - 64px);overflow:auto}
+.mega.on{display:block}
+.mega .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 26px;padding-top:22px;padding-bottom:24px}
+.mega h5{margin:0 0 6px;font-size:13px;font-weight:800;color:var(--teal-d);display:flex;align-items:center;gap:6px}
+.mega h5 svg{width:16px;height:16px}
+.mega a{display:flex;justify-content:space-between;gap:8px;padding:4px 6px;margin:0 -6px;border-radius:6px;font-size:13.5px;color:var(--ink);text-decoration:none;cursor:pointer}
+.mega a:hover{background:var(--teal-soft)}
+.mega a span{color:var(--muted);font-size:12px;white-space:nowrap}
+
+/* ---------- pages ---------- */
+.page{display:none;padding:34px 0 60px;animation:fade .25s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.ph{margin-bottom:22px}
+.ph .eyebrow{font-size:12.5px;font-weight:700;color:var(--teal-d)}
+.ph h2{font-size:27px;font-weight:800;letter-spacing:-.3px;margin-top:2px}
+.ph p{color:var(--muted);max-width:740px;margin-top:6px}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;border-radius:22px;padding:40px 36px;display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:center;position:relative;overflow:hidden;min-height:400px}
+.hero .tag{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:2px}
+.hero h1{font-size:34px;font-weight:800;line-height:1.45;margin:8px 0 12px}
+.hero p{color:#cfcbe6;font-size:15.5px;max-width:540px}
+.hero .cta{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.hero-copy{position:relative;z-index:2}
+#cloud{position:relative;width:100%;height:360px;cursor:crosshair;display:block}
+.btn{border:0;border-radius:10px;padding:10px 18px;cursor:pointer;font-weight:700;font-size:14px;transition:transform .15s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{transform:translateY(-1px)}
+.btn-teal{background:var(--teal);color:var(--navy)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff}
+.btn-line{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.facts span{font-size:12.5px;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:2px 12px;color:#cfcbe6}
+.facts b{color:#fff}
+
+.lines{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.line-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;cursor:pointer;text-align:right;transition:border-color .15s,transform .15s;box-shadow:var(--shadow)}
+.line-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.line-card .ic{width:40px;height:40px;border-radius:11px;background:var(--teal-soft);display:grid;place-items:center;color:var(--teal-d)}
+.line-card .ic svg{width:22px;height:22px}
+.line-card h3{font-size:15.5px;font-weight:800;margin:12px 0 4px}
+.line-card p{font-size:13px;color:var(--muted)}
+.line-card .cnt{font-size:12px;color:var(--teal-d);font-weight:700;margin-top:10px}
+
+.sig{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;grid-template-columns:1.3fr 1fr;gap:22px;align-items:center;box-shadow:var(--shadow)}
+.sig .tag{font-size:12px;font-weight:700;color:var(--teal-d)}
+.sig h3{font-size:20px;font-weight:800;margin:2px 0 6px}
+.sig ul{margin:10px 0 0;padding:0 18px 0 0;color:var(--muted);font-size:13.5px}
+.mini-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.mini-steps div{background:var(--soft);border-radius:10px;padding:10px 6px;text-align:center;font-size:12px}
+.mini-steps b{display:block;font-size:13px;color:var(--teal-d)}
+
+/* services */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13.5px;color:var(--muted)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700}
+.line-head{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.line-head h3{font-size:20px;font-weight:800}
+.badge{font-size:12px;border-radius:6px;padding:1px 9px;background:var(--int-bg);color:var(--int);border:1px solid var(--int-line)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;cursor:pointer;display:flex;flex-direction:column;text-align:right;transition:border-color .15s,transform .15s;box-shadow:var(--shadow)}
+.card:hover,.card:focus-visible{border-color:var(--teal);transform:translateY(-2px);outline:none}
+.card .unit{font-size:11.5px;color:var(--teal-d);font-weight:700}
+.card h4{font-size:15.5px;font-weight:800;margin:4px 0;line-height:1.6}
+.card p{font-size:13px;color:var(--muted);flex:1}
+.card .foot{display:flex;justify-content:space-between;align-items:end;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.card .from{font-size:12px;color:var(--muted)}
+.card .from b{font-size:19px;color:var(--ink);font-weight:800;margin:0 3px}
+.card .more{font-size:12.5px;color:var(--teal-d);font-weight:700}
+.card .links{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.ig{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;text-decoration:none;border-radius:8px;padding:5px 10px;background:linear-gradient(135deg,#f58529,#dd2a7b 50%,#8134af);color:#fff}
+.ig.alt{background:var(--soft);color:var(--ink)}
+.ig svg{width:14px;height:14px}
+.disc{display:inline-block;font-size:11.5px;font-weight:800;background:var(--teal);color:var(--navy);border-radius:6px;padding:0 8px;margin-top:6px}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;cursor:pointer;text-align:right;transition:border-color .15s,transform .15s;box-shadow:var(--shadow);position:relative}
+.plan:hover{border-color:var(--teal);transform:translateY(-2px)}
+.plan.star{background:var(--navy);color:#fff;border-color:var(--navy)}
+.plan.star p,.plan.star .old{color:#bdb8da}
+.plan .phase{font-size:11.5px;font-weight:700;color:var(--teal-d)}
+.plan.star .phase,.plan.star .dur{color:var(--teal)}
+.plan h3{font-size:18px;font-weight:800;margin:2px 0 6px}
+.plan p{font-size:13px;color:var(--muted);flex:1}
+.plan .price{margin-top:16px}
+.plan .old{font-size:12.5px;color:var(--muted);text-decoration:line-through}
+.plan .new{font-size:26px;font-weight:800;line-height:1.3}
+.plan .new small{font-size:12.5px;font-weight:400}
+.plan .save{position:absolute;top:16px;left:16px;font-size:11.5px;font-weight:700;background:var(--teal);color:var(--navy);border-radius:6px;padding:0 8px}
+.plan .dur{font-size:12.5px;margin-top:8px;color:var(--teal-d);font-weight:700}
+
+/* smart */
+.wiz{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.step-t{font-size:14px;font-weight:800;margin:0 0 8px;display:flex;gap:8px;align-items:center}
+.step-t i{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--teal);display:grid;place-items:center;font-size:12px}
+.opts{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.opt{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:7px 12px;cursor:pointer;font-size:13.5px;text-align:right}
+.opt small{display:block;color:var(--muted);font-size:11.5px}
+.opt.on{border-color:var(--teal);background:var(--teal-soft);font-weight:700}
+.rec{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:start;padding:10px 0;border-bottom:1px dashed var(--line)}
+.rec input{width:18px;height:18px;margin-top:4px;accent-color:var(--teal-d)}
+.rec .rn{font-weight:700;font-size:14px;cursor:pointer}
+.rec .rn:hover{color:var(--teal-d)}
+.rec .rw{font-size:12.5px;color:var(--muted)}
+.rec .rp{font-weight:800;white-space:nowrap;font-size:14px}
+.rec .rp small{display:block;font-weight:400;color:var(--muted);font-size:11px;text-align:left}
+.rec.off{opacity:.45}
+.empty{color:var(--muted);font-size:13.5px;padding:20px 0;text-align:center}
+
+/* portfolio */
+.protect{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.vimg{position:relative;background:var(--soft) center/cover no-repeat;border-radius:12px;overflow:hidden}
+.vimg::after{content:"RAHNEGASHT";position:absolute;inset:auto 10px 8px auto;font-size:10px;letter-spacing:2px;font-weight:800;color:rgba(255,255,255,.75);text-shadow:0 1px 3px rgba(0,0,0,.5);pointer-events:none}
+.vimg.contain{background-size:contain;background-color:#f3f1ec}
+.book{display:grid;grid-template-columns:1fr 210px;gap:12px}
+.book .main{aspect-ratio:1.414;cursor:zoom-in;background-size:contain;background-color:#f3f1ec}
+.book .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:6px;max-height:420px;overflow:auto;align-content:start}
+.book .thumbs button{border:2px solid transparent;border-radius:8px;padding:0;cursor:pointer;aspect-ratio:1.414;background:var(--soft) center/cover}
+.book .thumbs button.on{border-color:var(--teal)}
+.book-cap{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13.5px}
+.book-cap .nav{display:flex;gap:6px}
+.book-cap .nav button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer}
+.cases{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;text-align:right;padding:0;display:flex;flex-direction:column}
+.case .vimg{aspect-ratio:1.414;border-radius:0}
+.case .tx{padding:12px 14px}
+.case h4{font-size:14.5px;font-weight:800}
+.case p{font-size:12.5px;color:var(--muted)}
+.ptabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.phase-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.phase-box ol{columns:2;column-gap:28px;margin:10px 0 0;padding:0 20px 0 0;font-size:13.5px}
+.phase-box li{break-inside:avoid;padding:2px 0}
+.pgal{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.pgal figure{margin:0;cursor:zoom-in}
+.pgal .vimg{aspect-ratio:1}
+.pgal figcaption{font-size:11.5px;color:var(--muted);padding:3px 2px 0;line-height:1.5}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pkg{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.pkg.pkg-rec{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft)}
+.pkg h4{font-size:16px;font-weight:800}
+.pkg .pp{font-size:26px;font-weight:800;color:var(--teal-d);line-height:1.4}
+.pkg .pp small{font-size:12.5px;color:var(--muted);font-weight:400}
+.pkg ul{margin:8px 0 0;padding:0 18px 0 0;font-size:13px;color:var(--muted)}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.vid{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.vid video{width:100%;aspect-ratio:16/9;background:#000;display:block}
+.vid video.tall{aspect-ratio:9/16;max-height:420px;object-fit:contain}
+.vid .tx{padding:14px 16px}
+.vid h4{font-size:15px;font-weight:800}
+.vid .pp{font-size:22px;font-weight:800;color:var(--teal-d)}
+.vid .pp small{font-size:12px;color:var(--muted);font-weight:400}
+.vid p{font-size:12.5px;color:var(--muted)}
+.sec-t{font-size:19px;font-weight:800;margin:30px 0 4px}
+.sec-s{color:var(--muted);font-size:13.5px;margin-bottom:12px}
+
+/* method */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.flow .st{padding:20px 18px;border-left:1px solid var(--line)}
+.flow .st:last-child{border-left:0}
+.flow .n{width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--teal);font-weight:800;display:grid;place-items:center;font-size:14px}
+.flow h4{font-size:16px;font-weight:800;margin:10px 0 2px}
+.flow .en{font-size:12px;color:var(--muted);direction:ltr;text-align:right}
+.flow .row{margin-top:12px;font-size:13px}
+.flow .row b{display:block;font-size:11.5px;color:var(--teal-d);margin-bottom:2px}
+.flow .prod{margin-top:12px;display:flex;flex-wrap:wrap;gap:4px}
+.flow .prod span{font-size:11.5px;background:var(--teal-soft);color:var(--teal-d);border-radius:6px;padding:0 7px}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.tool .who{font-size:11.5px;font-weight:700;color:var(--muted)}
+.tool h4{font-size:15px;font-weight:800;margin:2px 0 4px}
+.tool p{font-size:13px;color:var(--muted)}
+.tool .use{font-size:12.5px;margin-top:8px;border-top:1px dashed var(--line);padding-top:6px}
+.tool .use b{color:var(--teal-d)}
+.diff{margin-top:22px;background:var(--navy);color:#fff;border-radius:18px;padding:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.diff h4{font-size:15px;font-weight:800;color:var(--teal);margin-bottom:4px}
+.diff p{font-size:13.5px;color:#cfcbe6}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.panel h3{font-size:16px;font-weight:800;margin-bottom:12px}
+.rows{display:flex;flex-direction:column;gap:8px}
+.crow{display:grid;grid-template-columns:1fr 110px 92px 32px;gap:8px;align-items:center}
+.crow select,.crow input,.field select,.field input[type=number]{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:9px;padding:7px 9px;font-size:13.5px}
+.crow input{text-align:center}
+.x{border:0;background:var(--soft);border-radius:8px;height:34px;cursor:pointer;color:var(--muted)}
+.x:hover{background:#fbe3e3;color:#b33}
+.crow .hint{grid-column:1/-1;font-size:11.5px;color:var(--muted);margin-top:-4px}
+.add{margin-top:10px;border:1px dashed var(--line);background:none;border-radius:10px;padding:8px;width:100%;cursor:pointer;color:var(--teal-d);font-weight:700}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.field label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:4px}
+input[type=range]{width:100%;accent-color:var(--teal-d)}
+.total{background:var(--navy);color:#fff;border-radius:14px;padding:16px 18px}
+.total .lbl{font-size:12.5px;color:#bdb8da}
+.total .big{font-size:32px;font-weight:800;line-height:1.3}
+.total .big small{font-size:14px;font-weight:400;color:#bdb8da}
+.total .sub{font-size:12.5px;color:#cfcbe6;margin-top:4px}
+.lines-out{font-size:13px}
+.lines-out div{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.lines-out div span:last-child{font-weight:700;white-space:nowrap}
+.pay{margin-top:12px;font-size:13px;background:var(--soft);border-radius:10px;padding:10px 12px}
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+.person{border:1px solid var(--line);border-radius:12px;padding:10px 12px;position:relative;overflow:hidden;background:var(--card)}
+.person::before{content:"";position:absolute;inset:0 0 0 auto;width:4px;background:var(--pc)}
+.person .nm{font-size:13px;font-weight:700}
+.person .amt{font-size:20px;font-weight:800;line-height:1.4}
+.person .bd{font-size:11.5px;color:var(--muted)}
+.others{margin-top:10px;font-size:13px}
+.others div{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px dashed var(--line)}
+.others em{display:inline-block;width:9px;height:9px;border-radius:3px;margin-left:6px}
+.warn{margin-top:10px;font-size:12.5px;background:#fdeaea;color:#a12d2d;border-radius:8px;padding:6px 10px}
+.bar{display:flex;height:14px;border-radius:7px;overflow:hidden;background:var(--soft);margin:10px 0 8px}
+.bar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend em{width:9px;height:9px;border-radius:3px}
+
+/* internal */
+.ibox{background:var(--int-bg);border:1px solid var(--int-line);border-radius:18px;padding:20px;margin-bottom:16px}
+.ibox h3{font-size:18px;font-weight:800;margin-bottom:4px}
+.ibox .lead{color:var(--muted);font-size:13.5px;margin-bottom:12px}
+.formula{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px;font-weight:700;line-height:2.1}
+.formula span{display:inline-block;border-radius:6px;padding:0 8px;margin:0 2px;color:#fff;font-weight:700;font-size:13px}
+.sliders{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sl{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.sl label{display:flex;justify-content:space-between;font-size:13px;font-weight:700}
+.sl label b{color:var(--teal-d)}
+.sl small{display:block;font-size:11.5px;color:var(--muted)}
+.sl.rem{background:var(--teal-soft);border-color:var(--teal)}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.wsplit{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.wsplit .field input{text-align:center}
+table.t{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border-radius:12px;overflow:hidden}
+table.t th,table.t td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line)}
+table.t th{background:var(--soft);font-size:12.5px;color:var(--muted);font-weight:500}
+table.t td.num{font-weight:700;white-space:nowrap}
+.tscroll{overflow-x:auto}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rules{margin:0;padding:0 18px 0 0;font-size:13.5px}
+.rules li{padding:3px 0}
+.src{font-size:12.5px;columns:2;padding:0 18px 0 0;margin:0}
+
+/* terms */
+.terms{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.term{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.term h4{font-size:14.5px;font-weight:800;margin-bottom:4px}
+.term p{font-size:13.5px;color:var(--muted)}
+
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(20,16,38,.6);z-index:50;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(3px)}
+.ov.on{display:flex}
+.modal{background:var(--card);border-radius:20px;max-width:720px;width:100%;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:pop .2s ease}
+.modal.wide{max-width:1000px;background:#111}
+@keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.mhead{background:var(--navy);color:#fff;padding:22px 24px;position:relative}
+.mhead .tag{font-size:12px;color:var(--teal);font-weight:700}
+.mhead h3{font-size:22px;font-weight:800;margin:2px 0 4px;padding-left:36px}
+.mhead p{color:#cfcbe6;font-size:14px}
+.close{position:absolute;top:16px;left:16px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:18px;line-height:1;z-index:2}
+.mbody{padding:20px 24px 24px}
+.mbody h4{font-size:13px;color:var(--muted);font-weight:700;margin:16px 0 8px}
+.mbody h4:first-child{margin-top:0}
+.checks{list-style:none;margin:0;padding:0;font-size:14px}
+.checks li{padding:4px 26px 4px 0;position:relative}
+.checks li::before{content:"";position:absolute;right:2px;top:10px;width:6px;height:11px;border-left:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(-45deg) scaleX(-1)}
+.metas{display:flex;gap:8px;flex-wrap:wrap}
+.metas span{background:var(--soft);border-radius:8px;padding:3px 10px;font-size:13px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tier{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.tier.mid{border-color:var(--teal);background:var(--teal-soft)}
+.tier .tn{font-size:12px;color:var(--muted)}
+.tier .tp{font-size:24px;font-weight:800;line-height:1.4}
+.tier .td{font-size:12px;color:var(--muted)}
+.mint{background:var(--int-bg);border:1px solid var(--int-line);border-radius:12px;padding:12px 14px;margin-top:16px}
+.mint .h{font-size:13px;font-weight:700;color:var(--int)}
+.mfoot{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.plist{list-style:none;padding:0;margin:0;font-size:14px}
+.plist li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.plist li span:last-child{color:var(--muted);white-space:nowrap}
+.lbx{position:relative;padding:14px}
+.lbx .vimg{width:100%;height:min(76vh,700px);background-size:contain;background-color:#111;border-radius:10px}
+.lbx .cap{color:#ddd;font-size:13.5px;display:flex;justify-content:space-between;align-items:center;padding:10px 4px 0}
+.lbx .nav button{width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:16px}
+.pw{padding:24px}
+.pw input{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 12px;font-size:16px;letter-spacing:3px;text-align:center;direction:ltr}
+.pw .err{color:#c0392b;font-size:13px;min-height:20px;margin-top:6px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:8px 18px;border-radius:999px;font-size:13.5px;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:12.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:1060px){
+  .lines,.plans,.cases{grid-template-columns:repeat(2,1fr)}
+  .grid,.tools,.terms,.vids,.pkgs{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:repeat(2,1fr)}
+  .flow .st:nth-child(2){border-left:0}
+  .flow .st:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .calc,.wiz,.split-grid{grid-template-columns:1fr}
+  .mega .wrap{grid-template-columns:repeat(2,1fr)}
+  .pgal{grid-template-columns:repeat(4,1fr)}
+  .sliders{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  #cloud{height:280px}
+}
+@media (max-width:680px){
+  .top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:6px;gap:8px}
+  .tabs{order:3;flex-basis:100%}
+  .lock{margin-right:auto}
+  .mega{top:0}
+  .hero{grid-template-columns:1fr;padding:28px 20px;min-height:auto}
+  #cloud{height:240px}
+  .hero h1{font-size:25px}
+  .lines,.plans,.grid,.tools,.terms,.cols2,.diff,.sig,.cases,.vids,.pkgs,.mega .wrap,.sliders{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .flow .st{border-left:0;border-bottom:1px solid var(--line)}
+  .tiers{grid-template-columns:1fr}
+  .crow{grid-template-columns:1fr 1fr 70px 32px}
+  .crow select:first-child{grid-column:1/-1}
+  .fields,.people,.wsplit{grid-template-columns:1fr 1fr}
+  .book{grid-template-columns:1fr}
+  .book .thumbs{grid-template-columns:repeat(4,1fr);max-height:none}
+  .pgal{grid-template-columns:repeat(2,1fr)}
+  .phase-box ol{columns:1}
+  .src{columns:1}
+  .ph h2{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <button class="logo" data-go="home" aria-label="صفحه‌ی اصلی"><svg id="miniLogo" viewBox="540 240 925 807" aria-hidden="true"></svg><b>ره‌نگاشت</b></button>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mega">همه‌ی محصولات ▾</button>
+    <nav class="tabs" id="tabs">
+      <button data-go="home">نمای کلی</button>
+      <button data-go="services">خدمات</button>
+      <button data-go="plans">پلن‌ها</button>
+      <button data-go="smart">محاسبه‌ی هوشمند</button>
+      <button data-go="portfolio">نمونه‌کارها</button>
+      <button data-go="method">روش کار ما</button>
+      <button data-go="calc">ماشین‌حساب</button>
+      <button data-go="terms">شرایط</button>
+      <button data-go="internal" class="int int-inline">بخش داخلی</button>
+    </nav>
+    <button class="lock" id="lockBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span id="lockTxt">ورود تیم</span></button>
+  </div>
+</header>
+<div class="mega" id="mega"><div class="wrap" id="megaInner"></div></div>
+
+<main class="wrap">
+
+<!-- HOME -->
+<section class="page" id="p-home">
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="tag">FUTURE IS NOW</div>
+      <h1>مشاوره‌ی مارکتینگ هوشمند<br>ره‌نگاشت</h1>
+      <p>ره‌نگاشت یعنی «نقشه‌ی راه». با روش کار شرکت‌های بزرگ مشاوره و ابزارهای هوش مصنوعی، از تشخیص مشکل تا اجرا کنار شما هستیم و هر قدم را در پنل رودمپ اختصاصی‌تان نشان می‌دهیم.</p>
+      <div class="cta">
+        <button class="btn btn-teal" data-go="smart">محاسبه‌ی هوشمند هزینه</button>
+        <button class="btn btn-ghost" data-go="services">مشاهده‌ی خدمات</button>
+        <button class="btn btn-ghost" data-go="portfolio">نمونه‌کارها</button>
+      </div>
+      <div class="facts"><span>واحد قیمت: <b>میلیون تومان</b></span><span>اعتبار قیمت‌ها: <b>۳ ماه</b></span><span>به‌روزرسانی: <b>آبان ۱۴۰۵</b></span></div>
+    </div>
+    <canvas id="cloud" aria-label="لوگوی ره‌نگاشت از ذرات نور"></canvas>
+  </div>
+  <div class="lines" id="lineCards"></div>
+  <div class="sig">
+    <div>
+      <div class="tag">محصول امضای ره‌نگاشت · داخل همه‌ی پلن‌ها</div>
+      <h3>پنل رودمپ ره‌نگاشت</h3>
+      <p class="muted" style="font-size:14px">پنل اختصاصی شرکت شما که همیشه نشان می‌دهد کار کجاست: چه انجام شده، چه مانده، نتیجه چه بوده و قدم بعدی چیست. دیگر لازم نیست بپرسید «تا الان چه کار کرده‌اید؟».</p>
+      <ul><li>نقشه‌ی راه پروژه با وضعیت هر کار</li><li>گزارش ماهانه‌ی تحویل‌ها و شاخص‌های کلیدی</li><li>همه‌ی فایل‌ها، تحقیقات و تحلیل‌ها در یک‌جا</li></ul>
+      <div style="display:flex;margin-top:14px"><button class="btn btn-line" data-open="panelS">جزئیات و قیمت</button></div>
+      <div style="margin-top:14px"><div class="muted" style="font-size:12.5px;font-weight:700;margin-bottom:6px">نمونه‌ی پنل‌های واقعی:</div><div class="links" id="panelSamples" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
+    </div>
+    <div class="mini-steps"><div><b>۱</b>تشخیص</div><div><b>۲</b>طراحی</div><div><b>۳</b>اجرا</div><div><b>۴</b>پایش</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="page" id="p-services">
+  <div class="ph"><div class="eyebrow">خدمات</div><h2>خدمات و محصولات ره‌نگاشت</h2><p>روی هر خدمت کلیک کنید تا جزئیات، خروجی‌ها و قیمت هر سطح را ببینید. هر خدمت را می‌شود جدا سفارش داد یا در یک پلن جامع گرفت.</p></div>
+  <div class="chips" id="lineChips"></div>
+  <div id="serviceList"></div>
+</section>
+
+<!-- PLANS -->
+<section class="page" id="p-plans">
+  <div class="ph"><div class="eyebrow">پلن‌های جامع</div><h2>همه‌چیز یک‌جا، با قیمت بهتر</h2><p>هر پلن یک مرحله از مسیر است. قیمت‌ها در سطح استاندارد است و برای سطح پایه و پیشرفته به همان نسبت تغییر می‌کند.</p></div>
+  <div class="plans" id="planGrid"></div>
+</section>
+
+<!-- SMART -->
+<section class="page" id="p-smart">
+  <div class="ph"><div class="eyebrow">محاسبه‌ی هوشمند</div><h2>بگویید کسب‌وکارتان چیست و مشکل کجاست</h2><p>چند انتخاب ساده کنید تا پیشنهاد ره‌نگاشت برای رشد فروش و هزینه‌ی تقریبی آن را ببینید. هر پیشنهاد را می‌توانید روشن یا خاموش کنید.</p></div>
+  <div class="wiz">
+    <div class="panel">
+      <div class="step-t"><i>۱</i>کسب‌وکار شما چیست؟</div><div class="opts" id="wBiz"></div>
+      <div class="step-t"><i>۲</i>اندازه‌ی کسب‌وکار</div><div class="opts" id="wSize"></div>
+      <div class="step-t"><i>۳</i>مشکل یا نیاز اصلی چیست؟ <span class="muted" style="font-weight:400;font-size:12.5px">(چند گزینه)</span></div><div class="opts" id="wProb"></div>
+      <div class="step-t"><i>۴</i>چطور شروع کنیم؟</div><div class="opts" id="wMode"></div>
+    </div>
+    <div>
+      <div class="total"><div class="lbl">هزینه‌ی تقریبی پیشنهاد</div><div class="big" id="wTotal">۰ <small>میلیون تومان</small></div><div class="sub" id="wSub">برای دیدن پیشنهاد، نوع کسب‌وکار و حداقل یک مشکل را انتخاب کنید.</div></div>
+      <div class="panel" style="margin-top:12px">
+        <h3 style="margin-bottom:2px">پیشنهاد ره‌نگاشت</h3>
+        <div id="wRecs"><div class="empty">هنوز انتخابی نکرده‌اید.</div></div>
+        <div class="mfoot" id="wActions" style="display:none"><button class="btn btn-teal" id="wToCalc">انتقال به ماشین‌حساب</button><button class="btn btn-line" data-go="plans">مقایسه با پلن‌ها</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="page protect" id="p-portfolio">
+  <div class="ph"><div class="eyebrow">نمونه‌کارها</div><h2>کارهایی که ساخته‌ایم</h2><p>تیم برندینگ ره‌نگاشت (استودیو ach سابق) با تجربه‌ی گروه صنعتی گلرنگ، توسعه کشت و صنعت کوروش، PepsiCo و آژانس‌های تبلیغاتی. تصاویر فقط برای نمایش و با کیفیت پایین بارگذاری شده‌اند.</p></div>
+  <div class="chips" id="pfTabs"><button class="chip on" data-pf="brand">برندینگ و برندبوک</button><button class="chip" data-pf="anim">انیمیشن و موشن</button></div>
+
+  <div id="pf-brand">
+    <div class="sec-t" style="margin-top:6px">برندبوک ۱۲۸ صفحه‌ای «توکا» را ورق بزنید</div>
+    <p class="sec-s">نمونه‌ی مستقیم ساختار ده‌فصلی برندبوک ره‌نگاشت؛ از راهبرد و شخصیت برند تا اوراق اداری، تندیس، لباس فرم، فضا و رایحه‌ی سازمانی.</p>
+    <div class="book">
+      <div><div class="vimg main" id="bookMain" role="img"></div>
+        <div class="book-cap"><span><b id="bookTitle"></b> <span class="muted" id="bookCount"></span></span><span class="nav"><button id="bPrev" aria-label="قبلی">→</button><button id="bNext" aria-label="بعدی">←</button></span></div></div>
+      <div class="thumbs" id="bookThumbs"></div>
+    </div>
+
+    <div class="sec-t">پروژه‌های شاخص</div>
+    <p class="sec-s">روی هر پروژه کلیک کنید تا صفحه‌های آن را ببینید.</p>
+    <div class="cases" id="cases"></div>
+
+    <div class="sec-t">پنج فاز ساخت هویت برند</div>
+    <p class="sec-s">هر فاز با تأیید کارفرما بسته می‌شود و فاز بعد بعد از آن شروع می‌شود.</p>
+    <div class="ptabs chips" id="phTabs"></div>
+    <div class="phase-box" id="phBody"></div>
+
+    <div class="sec-t">پکیج‌های برندبوک</div>
+    <p class="sec-s">مبالغ به میلیون تومان؛ بر اساس هویت دوزبانه (فارسی/عربی و انگلیسی).</p>
+    <div class="pkgs" id="pkgs"></div>
+
+    <div class="sec-t">گالری نمونه‌کارها</div>
+    <div class="chips" id="galF"></div>
+    <div class="pgal" id="gal"></div>
+  </div>
+
+  <div id="pf-anim" style="display:none">
+    <div class="sec-t" style="margin-top:6px">انیمیشن تبلیغاتی و توضیحی</div>
+    <p class="sec-s">قیمت‌ها به‌ازای هر دقیقه است. نمونه‌ها فقط برای تماشا هستند.</p>
+    <div class="vids" id="vids"></div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="page" id="p-method">
+  <div class="ph"><div class="eyebrow">روش کار ما</div><h2>روش مک‌کنزی و BCG، در مقیاس بازار ایران</h2><p>شرکت‌هایی مثل مک‌کنزی و BCG کار را بر اساس مرحله می‌فروشند، نه ساعت: اول مسئله را درست تشخیص می‌دهند، بعد راه‌حل را طراحی می‌کنند، بعد اجرا می‌کنند و در آخر ارزش ساخته‌شده را پایش می‌کنند. ره‌نگاشت همین مسیر را با یک تیم ارشد کوچک و هوش مصنوعی پیاده می‌کند.</p></div>
+  <div class="flow">
+    <div class="st"><div class="n">۱</div><h4>تشخیص</h4><div class="en">Diagnose</div>
+      <div class="row"><b>مک‌کنزی و BCG</b>حل مسئله بر پایه‌ی فرضیه، درخت مسئله و تحلیل داده؛ پیدا کردن «ارزش در خطر».</div>
+      <div class="row"><b>ره‌نگاشت</b>مصاحبه، تحلیل داده‌ها با AI و فهرست ۱۰ مشکل اصلی به ترتیب اولویت.</div>
+      <div class="prod"><span>عارضه‌یابی</span><span>ممیزی AI</span><span>تحقیق با AI</span></div></div>
+    <div class="st"><div class="n">۲</div><h4>طراحی</h4><div class="en">Design</div>
+      <div class="row"><b>مک‌کنزی و BCG</b>استراتژی رشد با ابزارهایی مثل ماتریس رشد-سهم BCG و سه افق رشد مک‌کنزی.</div>
+      <div class="row"><b>ره‌نگاشت</b>جایگاه‌یابی، سبد محصول، قیمت، هویت برند و رودمپ اجرا.</div>
+      <div class="prod"><span>استراتژی مارکتینگ</span><span>برندبوک</span><span>جلسه‌ی تخصصی</span></div></div>
+    <div class="st"><div class="n">۳</div><h4>اجرا</h4><div class="en">Deliver &amp; Build</div>
+      <div class="row"><b>مک‌کنزی و BCG</b>تیم‌های اجرا و ساخت (مثل QuantumBlack و BCG X) که راه‌حل دیجیتال و AI را داخل سازمان می‌سازند.</div>
+      <div class="row"><b>ره‌نگاشت</b>ایجنت و داشبورد، FDE، کمپین، سوشال، وب‌سایت و رویداد.</div>
+      <div class="prod"><span>ایجنت</span><span>FDE</span><span>تبلیغات</span><span>رویداد</span></div></div>
+    <div class="st"><div class="n">۴</div><h4>پایش و همراهی</h4><div class="en">Sustain</div>
+      <div class="row"><b>مک‌کنزی و BCG</b>پیگیری ارزش ساخته‌شده و توانمندسازی تیم مشتری تا تغییر ماندگار شود.</div>
+      <div class="row"><b>ره‌نگاشت</b>پنل رودمپ، مشاوره‌ی مستمر، کوچینگ و آموزش.</div>
+      <div class="prod"><span>پنل رودمپ</span><span>ریتینر</span><span>کوچینگ</span></div></div>
+  </div>
+  <div class="ph" style="margin:30px 0 0"><h2 style="font-size:20px">ابزارهایی که از آن‌ها گرفته‌ایم</h2></div>
+  <div class="tools">
+    <div class="tool"><div class="who">مک‌کنزی</div><h4>MECE و درخت مسئله</h4><p>مسئله به بخش‌هایی شکسته می‌شود که هم‌پوشانی ندارند و چیزی را جا نمی‌اندازند.</p><div class="use"><b>در ره‌نگاشت:</b> ساختار عارضه‌یابی و ممیزی AI</div></div>
+    <div class="tool"><div class="who">مک‌کنزی</div><h4>اصل هرم (مینتو)</h4><p>اول نتیجه، بعد دلیل‌ها، بعد داده‌ها. مدیر در دقیقه‌ی اول جواب را می‌گیرد.</p><div class="use"><b>در ره‌نگاشت:</b> همه‌ی گزارش‌ها و پرزنت‌ها</div></div>
+    <div class="tool"><div class="who">مک‌کنزی</div><h4>سه افق رشد</h4><p>تقسیم سرمایه‌گذاری بین کسب‌وکار امروز، فرصت‌های در حال رشد و گزینه‌های آینده.</p><div class="use"><b>در ره‌نگاشت:</b> استراتژی و رودمپ چندساله</div></div>
+    <div class="tool"><div class="who">BCG</div><h4>ماتریس رشد-سهم</h4><p>دسته‌بندی محصولات بر اساس رشد بازار و سهم بازار برای تصمیم درباره‌ی سرمایه‌گذاری.</p><div class="use"><b>در ره‌نگاشت:</b> طراحی سبد محصول</div></div>
+    <div class="tool"><div class="who">BCG</div><h4>قاعده‌ی ۱۰-۲۰-۷۰ در هوش مصنوعی</h4><p>۱۰٪ ارزش AI از الگوریتم است، ۲۰٪ از فناوری و داده و ۷۰٪ از آدم‌ها و فرایندها.</p><div class="use"><b>در ره‌نگاشت:</b> FDE و کوچینگ، نه فقط ساخت ابزار</div></div>
+    <div class="tool"><div class="who">مک‌کنزی</div><h4>مدل ۷S</h4><p>هم‌راستایی استراتژی، ساختار، سیستم‌ها، ارزش‌ها، سبک، کارکنان و مهارت‌ها.</p><div class="use"><b>در ره‌نگاشت:</b> عارضه‌یابی و کوچینگ مدیران</div></div>
+  </div>
+  <div class="diff">
+    <div><h4>تیم ارشد + هوش مصنوعی</h4><p>به‌جای تیم بزرگ کارشناس جوان، تیم ارشد کوچک که تحقیق و تحلیل را با هوش مصنوعی چند برابر سریع‌تر انجام می‌دهد.</p></div>
+    <div><h4>فروش بر اساس مرحله</h4><p>مشتری می‌تواند با تشخیص شروع کند و بعد تصمیم بگیرد. هر مرحله خروجی مشخص و قیمت مشخص دارد.</p></div>
+    <div><h4>شفافیت با پنل رودمپ</h4><p>مشتری هر لحظه می‌بیند چه انجام شده و چه ارزشی ساخته شده؛ همان کاری که مشاوران بزرگ با گزارش‌های پیگیری ارزش می‌کنند.</p></div>
+  </div>
+</section>
+
+<!-- CALC -->
+<section class="page" id="p-calc">
+  <div class="ph"><div class="eyebrow">ماشین‌حساب</div><h2>برآورد هزینه‌ی پروژه</h2><p>خدمات را انتخاب کنید، سطح و تعداد (یا تعداد ماه) را بزنید. برآورد حدودی است و قیمت نهایی بعد از جلسه‌ی آشنایی مشخص می‌شود.</p></div>
+  <div class="calc">
+    <div class="panel">
+      <h3>اجزای پروژه</h3>
+      <div class="rows" id="rows"></div>
+      <button class="add" id="addRow">+ افزودن خدمت</button>
+      <div class="fields int">
+        <div class="field"><label for="ref">معرف (طبق تبصره، درصد معرفی می‌گیرد)</label>
+          <select id="ref"><option value="none">بدون معرف (کانال‌های ره‌نگاشت)</option><option value="dr">دکتر صادقی</option><option value="ash">اشکان</option><option value="alb">البرز</option><option value="mae">مائده</option><option value="ext">معرف بیرونی</option></select></div>
+        <div class="field"><label for="disc">تخفیف: <b id="discOut">۰٪</b> (از سود کم می‌شود)</label><input type="range" id="disc" min="0" max="20" step="1" value="0"></div>
+      </div>
+    </div>
+    <div>
+      <div class="total"><div class="lbl">برآورد کل پروژه</div><div class="big" id="tBig">۰ <small>میلیون تومان</small></div><div class="sub" id="tSub"></div></div>
+      <div class="panel" style="margin-top:12px"><div class="lines-out" id="tLines"></div><div class="pay" id="tPay"></div></div>
+      <div class="panel int" style="margin-top:12px">
+        <h3 style="margin-bottom:0">تقسیم بودجه‌ی این پروژه</h3>
+        <div id="cSplit"></div>
+        <button class="btn btn-line" style="margin-top:10px" id="toBudget">باز کردن در «تقسیم بودجه» و تغییر درصدها</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section class="page" id="p-terms">
+  <div class="ph"><div class="eyebrow">شرایط</div><h2>شرایط همکاری</h2></div>
+  <div class="terms">
+    <div class="term"><h4>سطح‌های قیمت</h4><p>پایه: زیر ۵۰ نفر یا یک محصول · استاندارد: ۵۰ تا ۳۰۰ نفر · پیشرفته: بیش از ۳۰۰ نفر، چند شعبه یا چند برند. برای بعضی خدمات، سطح به حجم کار بستگی دارد.</p></div>
+    <div class="term"><h4>پرداخت پروژه‌ها</h4><p>۵۰٪ پیش‌پرداخت و ۵۰٪ هنگام تحویل. پروژه‌های بالای ۳۰۰ میلیون: سه قسط ۵۰ / ۳۰ / ۲۰ مطابق نقاط تأیید.</p></div>
+    <div class="term"><h4>خدمات ماهانه</h4><p>پرداخت ابتدای هر ماه. حداقل مدت قرارداد در صفحه‌ی هر خدمت آمده است.</p></div>
+    <div class="term"><h4>عارضه‌یابی و ممیزی</h4><p>رایگان نیست. اگر ظرف ۳ ماه پروژه‌ی اصلی امضا شود، ۵۰٪ مبلغ آن از قیمت پروژه کم می‌شود.</p></div>
+    <div class="term"><h4>تعدیل قیمت</h4><p>قیمت‌ها ۳ ماه اعتبار دارند. قراردادهای بیش از ۶ ماه هر ۶ ماه با نرخ تورم تعدیل می‌شوند.</p></div>
+    <div class="term"><h4>هزینه‌های جانبی</h4><p>بودجه‌ی تبلیغات و اینفلوئنسر، هزینه‌ی سالن و پذیرایی رویداد، تولید و چاپ، سرور و API هوش مصنوعی و سفر خارج از تهران جدا و با فاکتور.</p></div>
+  </div>
+</section>
+
+<!-- INTERNAL -->
+<section class="page" id="p-internal">
+  <div class="ph"><div class="eyebrow" style="color:var(--int)">بخش داخلی · فقط تیم ره‌نگاشت</div><h2>ساختار قیمت‌گذاری و تقسیم بودجه</h2><p>همه‌ی درصدها قابل تغییرند و روی کل سایت (ماشین‌حساب، پلن‌ها و صفحه‌ی هر محصول در حالت داخلی) اعمال می‌شوند. تغییرات روی همین مرورگر ذخیره می‌شود.</p></div>
+
+  <div class="ibox">
+    <h3>فرمول قیمت پروژه</h3>
+    <div class="formula">قیمت پروژه =
+      <span style="background:var(--c-profit)">سود</span> +
+      <span style="background:var(--c-dev)">بودجه‌ی توسعه (هوش مصنوعی)</span> +
+      <span style="background:var(--c-ovh)">سربار</span> +
+      <span style="background:var(--c-ash)">دستمزد (اشکان، البرز، مائده، دکتر صادقی)</span> +
+      <span style="background:var(--c-office)">هزینه (دفتر و outsource)</span></div>
+    <p class="muted" style="font-size:13px;margin-top:10px">outsource (سهم شرکا و فریلنسرها) اول از قیمت کم می‌شود. درصدهای زیر روی «درآمد خالص» (قیمت منهای outsource) حساب می‌شوند. هر چه بعد از کم کردن سود، توسعه، سربار، دفتر و معرف بماند، دستمزد تیم است.</p>
+  </div>
+
+  <div class="ibox">
+    <h3>درصدها</h3>
+    <div class="sliders" id="sliders"></div>
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn btn-line" id="resetPct">بازگشت به پیش‌فرض</button></div>
+  </div>
+
+  <div class="ibox" id="budget">
+    <h3>ماشین‌حساب تقسیم بودجه</h3>
+    <p class="lead">قیمت پروژه و هزینه‌ی outsource را وارد کنید یا از ماشین‌حساب بیاورید. سهم دستمزد بین چهار نفر را هم می‌توانید دستی عوض کنید.</p>
+    <div class="split-grid">
+      <div class="panel" style="box-shadow:none">
+        <div class="fields" style="margin:0;padding:0;border:0">
+          <div class="field"><label for="bPrice">قیمت پروژه (میلیون)</label><input type="number" id="bPrice" min="0" value="300"></div>
+          <div class="field"><label for="bOut">outsource (میلیون)</label><input type="number" id="bOut" min="0" value="0"></div>
+          <div class="field"><label for="bRef">معرف</label><select id="bRef"><option value="none">بدون معرف</option><option value="dr">دکتر صادقی</option><option value="ash">اشکان</option><option value="alb">البرز</option><option value="mae">مائده</option><option value="ext">معرف بیرونی</option></select></div>
+          <div class="field"><label>&nbsp;</label><button class="btn btn-line" id="fromCalc" style="width:100%;justify-content:center">آوردن از ماشین‌حساب</button></div>
+        </div>
+        <h4 style="font-size:13px;color:var(--muted);margin:14px 0 6px">سهم هر نفر از دستمزد (٪)</h4>
+        <div class="wsplit" id="wsplit"></div>
+        <div class="muted" style="font-size:12px;margin-top:6px" id="wsum"></div>
+      </div>
+      <div>
+        <div class="total"><div class="lbl">دستمزد کل تیم</div><div class="big" id="bWages">۰</div><div class="sub" id="bSub"></div></div>
+        <div class="panel" style="margin-top:12px;box-shadow:none"><div id="bOutBox"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ibox">
+    <h3>سهم تیم در هر محصول (پیش‌فرض)</h3>
+    <p class="lead">وقتی پروژه از ماشین‌حساب می‌آید، دستمزد به این نسبت بین نفرات تقسیم می‌شود. در خدمات شرکا، دستمزد ره‌نگاشت به مدیر پروژه می‌رسد.</p>
+    <div class="tscroll"><table class="t" id="teamTable"></table></div>
+  </div>
+
+  <div class="ibox">
+    <h3>۱۵۰ میلیون در ماه کافی است؟</h3>
+    <p class="lead">فرض: ۳۰٪ درآمد از خدمات شرکاست. اعداد با درصدهای بالا محاسبه می‌شوند.</p>
+    <div class="tscroll"><table class="t" id="econTable"></table></div>
+    <p style="font-size:13.5px;margin-top:12px" id="econNote"></p>
+  </div>
+
+  <div class="cols2">
+    <div class="ibox">
+      <h3>قواعد داخلی</h3>
+      <ol class="rules">
+        <li><b>تبصره‌ی معرف:</b> هر کس (از تیم یا بیرون) کارفرما را بیاورد، درصد معرفی را می‌گیرد. بدون معرف، این سهم به سود اضافه می‌شود.</li>
+        <li>روی قیمت شرکا ۲۰ تا ۳۰٪ اضافه می‌شود (قابل تنظیم بالا).</li>
+        <li>تخفیف فقط از سود کم می‌شود؛ بیش از ۱۰٪ با تأیید دکتر صادقی.</li>
+        <li>دستمزد و سهم شرکا <b>بعد از وصول</b> پرداخت می‌شود.</li>
+        <li>بودجه‌ی توسعه صرف اشتراک‌ها و API هوش مصنوعی و ساخت ابزارهای داخلی می‌شود.</li>
+      </ol>
+    </div>
+    <div class="ibox">
+      <h3>مبنای قیمت‌ها (آبان ۱۴۰۵)</h3>
+      <ol class="rules" style="font-size:12.5px">
+        <li>مشاوره‌ی ساعتی بازار ۱ تا ۳٫۸ میلیون؛ پکیج ماهانه‌ی استراتژی دیجیتال ۵۰ تا ۲۰۰.</li>
+        <li>مدیریت و استراتژی سوشال: ۲۵ تا ۴۰ در ماه؛ مدیریت تبلیغات دیجیتال ۱۰ تا ۲۵ + بودجه‌ی رسانه.</li>
+        <li>سایت ۵۰ تا ۲۰۰؛ سئو ماهانه ۱۵ تا ۱۰۰.</li>
+        <li>انیمیشن (نرخ انیماتور + ۳۰٪): ۱۳ / ۲۶ / ۴۵٫۵ در دقیقه؛ استوری تک‌فریم ۶٫۵.</li>
+        <li>برندبوک دوزبانه: ۲۸۵ / ۳۴۹ / ۴۰۳ (مبنای پروپوزال ماهوت).</li>
+        <li>ایجنت اختصاصی متصل به داده ۶۰ تا ۳۰۰؛ دلار آزاد حدود ۲۶۵ هزار تومان.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap"><span>ره‌نگاشت · Future is now</span><span>کاتالوگ محصولات · آبان ۱۴۰۵ · قیمت‌ها به میلیون تومان</span></div></footer>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="portfolio-data.js"></script>
+<script>
+/* ================= helpers ================= */
+const fa = n => (Math.round(n*10)/10).toLocaleString('fa-IR');
+const $ = id => document.getElementById(id);
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const TIER = ['پایه','استاندارد','پیشرفته'];
+const TIER_DEF = ['کسب‌وکار کوچک · زیر ۵۰ نفر','کسب‌وکار متوسط · ۵۰ تا ۳۰۰ نفر','سازمان بزرگ · بیش از ۳۰۰ نفر'];
+const PEOPLE = {dr:{fa:'دکتر صادقی',c:'var(--c-dr)'}, ash:{fa:'اشکان',c:'var(--c-ash)'}, alb:{fa:'البرز',c:'var(--c-alb)'}, mae:{fa:'مائده',c:'var(--c-mae)'}};
+const PART = {out:{fa:'outsource (شرکا)',c:'var(--c-out)'}, office:{fa:'هزینه‌ی دفتر',c:'var(--c-office)'}, dev:{fa:'بودجه‌ی توسعه (AI)',c:'var(--c-dev)'}, ovh:{fa:'سربار',c:'var(--c-ovh)'}, profit:{fa:'سود',c:'var(--c-profit)'}, ext:{fa:'معرف بیرونی',c:'var(--c-ext)'}};
+const LOGO_D = 'M1002 260 L1445 1027 L1105 1027 L919 773 L1043 773 A53 53 0 0 0 1043 667 L828 667 L651 973 L930 973 L970 1027 L559 1027 L797 614 L1043 614 A106 106 0 0 1 1043 826 L1023 826 L1131 973 L1353 973 L1002 366 L929 493 L866 493 Z';
+const IMG = k => (window.RG_IMG||{})[k] || '';
+const ICON = {
+  strategy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>',
+  branding:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><circle cx="12" cy="14" r="2.5"/></svg>',
+  ai:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/><path d="M10 10h4v4h-4z"/></svg>',
+  edu:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>',
+  digital:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m10 8 4 2-4 2z"/></svg>',
+  events:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+  gifts:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13"/><path d="M12 8c-2-4-6-4-6-1.5S9 8 12 8c3 0 6-.5 6-1.5S14 4 12 8z"/></svg>',
+};
+const IGI = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
+
+/* ================= data ================= */
+const LINES = [
+  {id:'strategy', name:'استراتژی مارکتینگ و فروش', lead:'دکتر صادقی', short:'از تشخیص مشکل تا طراحی استراتژی و همراهی ماهانه با مدیران.'},
+  {id:'branding', name:'برندینگ و برندبوک', lead:'اشکان · دکتر صادقی', short:'استراتژی برند، لوگو و هویت بصری، برندبوک کامل، اقلام و تندیس سازمانی.'},
+  {id:'ai', name:'هوش مصنوعی و ایجنت', lead:'اشکان و البرز', short:'پیدا کردن جاهایی که AI ارزش می‌سازد، ساخت ایجنت و داشبورد، ایجنتیک کردن سازمان.'},
+  {id:'edu', name:'آموزش و کوچینگ', lead:'دکتر صادقی · اشکان · البرز · مائده', short:'کوچینگ فردی برای مدیران و تیم‌ها و آموزش کلاسی برای سازمان‌ها و آموزشگاه‌ها.'},
+  {id:'digital', name:'تبلیغات و خدمات دیجیتال', lead:'سالار · پویان · فرهاد · انیماتورها', short:'سوشال مدیا، کمپین، انیمیشن، وب‌سایت و SaaS، سئو و اینفلوئنسر.'},
+  {id:'events', name:'برگزاری رویداد', lead:'مهسا (مدیریت: ره‌نگاشت)', short:'رونمایی محصول، همایش و سمینار و رویدادهای داخلی سازمان.'},
+  {id:'gifts', name:'هدایای سازمانی اختصاصی', lead:'ددیصل · چیچیلاس (مدیریت: ره‌نگاشت)', short:'هدایای دست‌ساز و اختصاصی با لوگوی سازمان، با تخفیف ویژه از طریق ره‌نگاشت.'},
+];
+
+/* type: in = داخلی | partner = شریک (outsource) | teach = تدریس | infl = اینفلوئنسر | quote = بعد از برآورد | shop = فروشگاه همکار */
+const P = {
+  session:{line:'strategy', name:'جلسه‌ی مشاوره‌ی تخصصی', short:'یک جلسه‌ی ۲ ساعته با دکتر صادقی برای یک مسئله‌ی مشخص.', does:['بررسی مسئله و اطلاعات پیش از جلسه','جلسه‌ی ۲ ساعته با دکتر صادقی','جمع‌بندی مکتوب و قدم‌های بعدی'], dur:'یک جلسه', unit:'هر جلسه', p:[10,15,22], tiers:['آنلاین','حضوری در تهران','حضوری با مدیران ارشد'], type:'in', team:{dr:100}},
+  diag:{line:'strategy', name:'عارضه‌یابی مارکتینگ و فروش', short:'پیدا کردن ۱۰ مشکل اصلی فروش و مارکتینگ و نقطه‌ی شروع.', does:['مصاحبه با مدیران و تیم فروش','تحلیل داده‌های فروش، مشتری و رقبا با هوش مصنوعی','درخت مسئله و فهرست ۱۰ مشکل اصلی با اولویت','نقشه‌ی راه اولیه‌ی ۹۰ روزه'], dur:'۳ تا ۴ هفته', unit:'پروژه', p:[70,110,170], type:'in', team:{dr:50,ash:35,alb:15}},
+  strat:{line:'strategy', name:'طراحی استراتژی مارکتینگ و فروش', short:'جایگاه، بازار، سبد محصول، قیمت، کانال‌ها و برنامه‌ی فروش.', does:['تحقیق بازار و مشتری','جایگاه‌یابی و بخش‌بندی بازار','سبد محصول و سیاست قیمت','کانال‌ها و برنامه‌ی فروش','شاخص‌های کلیدی و رودمپ اجرا'], dur:'۶ تا ۱۰ هفته', unit:'پروژه', p:[200,350,600], type:'in', team:{dr:50,ash:30,alb:20}},
+  digiStrat:{line:'strategy', name:'استراتژی دیجیتال مارکتینگ', short:'مسیر سه تا شش‌ماهه‌ی حضور و فروش آنلاین.', does:['بررسی وضعیت آنلاین کسب‌وکار','تحلیل بازار، رقبا و مخاطب','انتخاب کانال‌های دیجیتال و KPI','مسیر سه تا شش‌ماهه'], dur:'هر فصل', unit:'فصلی', p:[40,60,80], type:'in', team:{ash:50,dr:30,mae:20}},
+  retainer:{line:'strategy', name:'مشاوره‌ی مستمر (ریتینر)', short:'همراهی ماهانه‌ی دکتر صادقی و تیم با مدیران شرکت.', does:['دو جلسه در ماه با مدیران','پایش شاخص‌ها در پنل رودمپ','پاسخ به مسائل جاری مارکتینگ و فروش','گزارش ماهانه'], dur:'حداقل ۶ ماه', unit:'ماهانه', monthly:true, p:[60,90,140], type:'in', team:{dr:75,ash:25}},
+
+  brandStrat:{line:'branding', name:'استراتژی برند', short:'جایگاه، شخصیت، پیام و معماری برند.', does:['شناخت بازار، رقبا و مخاطب (تحلیل 5C و SWOT)','جایگاه‌یابی و وعده‌ی برند','شخصیت، لحن و پیام‌های کلیدی','معماری برند، نام و تگ‌لاین'], dur:'۴ تا ۶ هفته', unit:'پروژه', p:[60,120,220], type:'in', team:{ash:60,dr:40}},
+  logo:{line:'branding', name:'طراحی لوگو و نشان', short:'نشان و نوشتار اختصاصی، با نسخه‌ها و قواعد استفاده.', does:['دو مسیر اولیه و تکمیل مسیر منتخب','نشان و نوشتار فارسی یا انگلیسی','نسخه‌های افقی، عمودی، تک‌رنگ و معکوس','حاشیه‌ی امن و کاربردهای نادرست'], dur:'۲ تا ۴ هفته', unit:'پروژه', p:[70,96,130], note:'نسخه‌ی زبان دوم: حدود ۶۰٪ قیمت لوگو', type:'in', team:{ash:80,alb:20}},
+  identity:{line:'branding', name:'سیستم هویت بصری', short:'رنگ، تایپوگرافی، گرید، پترن و جهت‌گیری تصویر.', does:['پالت رنگ (HEX، RGB، CMYK)','تایپوگرافی فارسی و انگلیسی','گرید، پترن و عناصر گرافیکی','راهنماهای پایه‌ی کاربرد'], dur:'۲ تا ۴ هفته', unit:'پروژه', p:[50,80,120], type:'in', team:{ash:70,alb:30}},
+  brandbook:{line:'branding', name:'برندبوک کامل', short:'هویت کامل برند و راهنمای اجرا در یک سند ده‌فصلی؛ مثل برندبوک ۱۲۸ صفحه‌ای توکا.', does:['بنیادهای راهبردی، شخصیت و هویت کلامی','لوگوی دوزبانه و سیستم هویت بصری','اوراق اداری و اقلام سازمانی','کاربردهای محیطی و دیجیتال','PDF نمایشگر و چاپ، فایل‌های منبع و آرشیو'], dur:'حدود ۱۲ هفته', unit:'پروژه', p:[285,349,403.4], tiers:['هویت دوزبانه، ۵ قلم اداری و برندبوک','+ ۵ قلم سازمانی و تندیس سه‌بعدی','+ ۵ آیکن اختصاصی و ۶ قالب شبکه‌ی اجتماعی'], showcase:true, type:'in', team:{ash:60,dr:25,alb:15}},
+  items:{line:'branding', name:'اوراق اداری یا اقلام سازمانی', short:'هر بسته ۵ قلم: کارت ویزیت، سربرگ، پاکت… یا بج، لباس، گیفت‌باکس، ماگ، خودکار.', does:['یک طرح پایه برای هر قلم','تطبیق با هویت برند','فایل اجرایی با اندازه، رنگ و راهنمای چاپ'], dur:'۱ تا ۲ هفته', unit:'هر بسته ۵ قلمی', p:[18,24,35], type:'in', team:{ash:70,alb:30}},
+  trophy:{line:'branding', name:'تندیس سازمانی سه‌بعدی', short:'کانسپت، مدل سه‌بعدی و رندر تندیس اختصاصی برند.', does:['یک کانسپت نهایی','مدل سه‌بعدی قابل ویرایش','سه رندر نهایی','ابعاد و متریال پیشنهادی'], dur:'۲ تا ۳ هفته', unit:'پروژه', p:[30,40,60], note:'ساخت و تولید تندیس جداست', type:'in', team:{ash:80,alb:20}},
+
+  aiAudit:{line:'ai', name:'ممیزی هوش مصنوعی سازمان', short:'کجای سازمان شما با هوش مصنوعی ارزش می‌سازد و از کجا شروع کنیم.', does:['نقشه‌ی فرایندهای اصلی','فهرست فرصت‌های AI به ترتیب بازگشت سرمایه','پیشنهاد ابزار و برآورد هزینه','برنامه‌ی اجرای ۹۰ روزه'], dur:'۲ تا ۳ هفته', unit:'پروژه', p:[60,90,150], type:'in', team:{ash:50,alb:50}},
+  research:{line:'ai', name:'تحقیق و تحلیل با هوش مصنوعی', short:'تحقیق بازار و رقبا و تحلیل فایل‌های شرکت، با خروجی پرزنت.', does:['تحقیق بازار، رقبا و مشتری','تحلیل فایل‌ها و داده‌های شرکت','گزارش و پرزنت آماده‌ی ارائه'], dur:'۲ تا ۴ هفته', unit:'پروژه', p:[40,75,130], type:'in', team:{ash:60,alb:40}},
+  agent:{line:'ai', name:'ساخت ایجنت اختصاصی', short:'یک ایجنت برای یک کار مشخص، وصل به داده‌ها و سیستم‌های شما.', does:['تعریف کار، داده‌ها و معیار موفقیت','ساخت و اتصال ایجنت (فروش، پشتیبانی، گزارش و…)','تست با تیم و تحویل','آموزش استفاده'], dur:'۳ تا ۶ هفته', unit:'هر ایجنت', p:[60,150,300], tiers:['پرسش و پاسخ از اسناد','متصل به یک سیستم','چندمرحله‌ای، متصل به چند سیستم'], note:'نگهداری ماهانه: ۸ / ۱۵ / ۲۵ · هزینه‌ی API و سرور جدا', type:'in', team:{alb:60,ash:40}},
+  agentM:{line:'ai', hidden:true, name:'نگهداری ماهانه‌ی ایجنت', unit:'ماهانه', monthly:true, p:[8,15,25], type:'in', team:{alb:60,ash:40}},
+  dash:{line:'ai', name:'داشبورد هوشمند مدیریتی', short:'همه‌ی داده‌ها، فایل‌ها و گزارش‌ها در یک داشبورد با تحلیل خودکار.', does:['اتصال منابع داده و فایل‌ها','شاخص‌های کلیدی مدیریتی','تحلیل و گزارش خودکار با AI','آموزش مدیران'], dur:'۴ تا ۸ هفته', unit:'پروژه', p:[120,220,400], note:'نگهداری ماهانه: ۱۵ / ۲۵ / ۴۰', type:'in', team:{ash:50,alb:50}},
+  dashM:{line:'ai', hidden:true, name:'نگهداری ماهانه‌ی داشبورد', unit:'ماهانه', monthly:true, p:[15,25,40], type:'in', team:{ash:50,alb:50}},
+  fde:{line:'ai', name:'برنامه‌ی ایجنتیک‌سازی سازمان (FDE)', short:'متخصص ره‌نگاشت داخل سازمان شما، تا ایجنت‌ها واقعاً کار کنند.', does:['حضور مستمر در سازمان','پیدا کردن کارهای قابل خودکارسازی','ساخت و استقرار ایجنت‌ها','آموزش تیم‌ها و اندازه‌گیری صرفه‌جویی'], dur:'حداقل ۳ ماه', unit:'ماهانه', monthly:true, p:[140,200,300], tiers:['۱ روز در هفته','۲ روز در هفته','۳ روز در هفته، چند واحد'], type:'in', team:{ash:50,alb:50}},
+  panelS:{line:'ai', name:'پنل رودمپ ره‌نگاشت', short:'پنل اختصاصی که مسیر کار، تحویل‌ها و نتایج را همیشه نشان می‌دهد.', does:['نقشه‌ی راه پروژه با وضعیت هر کار','گزارش ماهانه‌ی تحویل‌ها و شاخص‌ها','فایل‌ها و تحلیل‌ها در یک‌جا','دسترسی برای مدیران شرکت'], dur:'۱ تا ۲ هفته راه‌اندازی', unit:'راه‌اندازی', p:[25,40,60], note:'اشتراک ماهانه: ۱۰ / ۱۵ / ۲۵ · داخل همه‌ی پلن‌ها', type:'in', team:{ash:60,alb:40},
+    links:[{t:'نمونه: پنل بنیس ↗', u:'https://alborzashrafi.com/benisreport/'},{t:'نمونه: پنل گیفت کارت ↗', u:'https://alborzashrafi.com/giftcard/'},{t:'نمونه: پنل فرامرز بزرگی ↗', u:'https://alborzashrafi.com/bozorgi/'}]},
+  panelM:{line:'ai', hidden:true, name:'اشتراک ماهانه‌ی پنل رودمپ', unit:'ماهانه', monthly:true, p:[10,15,25], type:'in', team:{ash:60,alb:40}},
+
+  coachSocial:{line:'edu', name:'کوچینگ سوشال مدیا', short:'برای مدیر یا تیم محتوا: از استراتژی تا تحلیل نتایج.', does:['استراتژی محتوا و پیج','تولید و انتشار محتوا','تحلیل نتایج و بهبود'], dur:'۸ جلسه', unit:'پکیج', p:[30,45,70], type:'in', team:{mae:60,alb:40}},
+  coachCEO:{line:'edu', name:'کوچینگ مدیرعامل: فراغت و ذهن‌آگاهی', short:'تمرکز، آرامش و تصمیم‌گیری بهتر برای مدیرعامل.', does:['ذهن‌آگاهی بر پایه‌ی رویکرد جان کابات‌زین (MBSR)','شناخت الگوهای شخصیتی با انیاگرام','یادگیری تحولی (Transformative Learning)','تمرین فراغت از کار و مدیریت فشار'], dur:'۸ تا ۱۲ جلسه', unit:'پکیج', p:[50,80,120], tiers:['۸ جلسه‌ی آنلاین','۸ جلسه‌ی حضوری','۱۲ جلسه + مدیران ارشد'], type:'in', team:{ash:50,alb:50}},
+  coachAI:{line:'edu', name:'کوچینگ هوش مصنوعی برای مدیران', short:'چه ابزار AI بخرد، کجا استفاده کند و چطور.', does:['بررسی کار روزانه‌ی مدیر','انتخاب ابزار AI مناسب','آموزش عملی روی کار واقعی'], dur:'۴ تا ۶ جلسه', unit:'پکیج', p:[35,60,90], type:'in', team:{ash:60,alb:40}},
+  klass:{line:'edu', name:'دوره‌ی آموزشی سازمانی', short:'آموزش فروش، مدیران منطقه، ویزیتورها یا مارکتینگ.', does:['نیازسنجی کوتاه','کلاس ۶ تا ۸ ساعته تا ۲۵ نفر','جزوه و تمرین','ارزیابی پایان دوره'], dur:'هر روز ۶ تا ۸ ساعت', unit:'هر روز', p:[30,45,70], type:'in', team:{dr:85,mae:15}},
+  teach:{line:'edu', name:'تدریس برای آموزشگاه‌ها (DBA / MBA)', short:'تدریس دوره یا کارگاه برای مدارس کسب‌وکار.', does:['تدریس مارکتینگ و استراتژی','کارگاه هوش مصنوعی برای مدیران'], dur:'طبق برنامه‌ی آموزشگاه', unit:'هر ساعت', p:[3,5,8], type:'in', team:{dr:100}},
+
+  insta:{line:'digital', name:'استراتژی و مدیریت سوشال مدیا', short:'استراتژی، تقویم محتوا، سناریوی ریلز، انتشار و گزارش ماهانه.', does:['تحلیل وضعیت، رقبا و مخاطب','content pillars، KPI و تقویم ماهانه','ایده و سناریوی ریلز و کمپین‌های مناسبتی','انتشار، کنترل کیفیت و گزارش insight'], dur:'حداقل ۳ ماه', unit:'ماهانه', monthly:true, p:[32,45,65], tiers:['یک شبکه، حجم پایه','دو شبکه، حجم متوسط','چند شبکه و مدیریت کامل'], type:'partner', partner:'تیم سالار', pm:'mae'},
+  perf:{line:'digital', name:'مدیریت تبلیغات دیجیتال (پرفورمنس)', short:'کمپین، ریتارگتینگ، لندینگ و بهینه‌سازی CTR، CPA و ROAS.', does:['استراتژی تبلیغاتی و طراحی کمپین','مدیریت تبلیغات و ریتارگتینگ','برنامه‌ریزی لندینگ پیج','تحلیل و بهینه‌سازی شاخص‌ها'], dur:'حداقل ۳ ماه', unit:'ماهانه', monthly:true, p:[12,18,30], note:'بودجه‌ی رسانه جداست', type:'partner', partner:'تیم سالار', pm:'mae'},
+  adPack:{line:'digital', name:'پکیج کمپین تبلیغاتی', short:'ایده‌ی کمپین، تیزر یا انیمیشن، برنامه‌ی انتشار؛ موسیقی اختصاصی در صورت نیاز.', does:['ایده‌ی خلاق و پیام کمپین','سناریو و تولید تیزر یا انیمیشن','برنامه‌ی انتشار در کانال‌ها','موسیقی اختصاصی (اختیاری، بعد از برآورد)'], dur:'۴ تا ۸ هفته', unit:'کمپین', p:[90,200,450], tiers:['کمپین دیجیتال با یک ویدئو','کمپین چندکاناله با ۲ تا ۳ ویدئو','کمپین ملی با تیزر حرفه‌ای'], note:'موسیقی اختصاصی جدا و بعد از برآورد', type:'partner', partner:'تیم تولید', pm:'alb'},
+  anim:{line:'digital', name:'انیمیشن تبلیغاتی و توضیحی', short:'انیمیشن با انیماتور و هوش مصنوعی؛ قیمت به‌ازای هر دقیقه.', does:['ایده و استوری‌بورد','طراحی کاراکتر و صحنه','انیمیشن و موشن','گویندگی، صدا و تدوین'], dur:'۱ هفته تا ۱ ماه', unit:'هر دقیقه', perMin:true, defQty:4, p:[13,26,45.5], tiers:['موشن فلت · تحویل ۱ هفته','موشن حرفه‌ای · تحویل ۲ هفته','کاراکتر و تصویرسازی اختصاصی · تحویل ۱ ماه'], showcase:'anim', type:'partner', partner:'انیماتور (یاسر)', pm:'alb'},
+  story:{line:'digital', name:'استوری موشن تک‌فریم', short:'استوری ساده‌ی متحرک برای اینستاگرام.', does:['طراحی و موشن یک فریم','تحویل ۲ روزه'], dur:'۲ روز', unit:'هر استوری', p:[6.5,6.5,6.5], tiers:['ساده','ساده','ساده'], note:'اگر عکاسی یا تصویربرداری لازم باشد قیمت فرق می‌کند', type:'partner', partner:'انیماتور (یاسر)', pm:'alb'},
+  teaser:{line:'digital', name:'تیزر تبلیغاتی', short:'سناریو، تولید، گوینده و نریتور، تدوین.', does:['ایده و سناریو','تصویربرداری یا تولید','گوینده و نریتور','تدوین و نسخه‌های شبکه‌های اجتماعی'], dur:'۳ تا ۶ هفته', unit:'هر تیزر', p:[40,120,280], tiers:['۱۵ ثانیه، رئال یا موشن ساده','۳۰ تا ۶۰ ثانیه با گوینده','حرفه‌ای با بازیگر و چند لوکیشن'], type:'partner', partner:'تیم تولید و گوینده', pm:'alb'},
+  music:{line:'digital', name:'موسیقی اختصاصی برند', short:'جینگل یا موسیقی اختصاصی؛ معمولاً داخل پکیج کمپین تبلیغاتی.', does:['شناخت برند و حس موردنظر','آهنگسازی و اجرا با موزیسین','میکس و مستر','نسخه‌های کوتاه برای تبلیغ'], dur:'بسته به پیچیدگی', unit:'هر قطعه', p:null, ptext:'بعد از برآورد', note:'قیمت بعد از بررسی پیچیدگی کار مشخص می‌شود', type:'quote', partner:'آهنگساز و موزیسین', pm:'alb'},
+  web:{line:'digital', name:'طراحی و ساخت وب‌سایت', short:'از لندینگ و سایت شرکتی تا فروشگاه و سایت اختصاصی.', does:['استراتژی سایت و مشاوره‌ی UX/UI','طراحی و توسعه','سئوی پایه و آنالیتیکس','آموزش مدیریت سایت'], dur:'۴ تا ۱۰ هفته', unit:'پروژه', p:[60,150,300], tiers:['لندینگ یا سایت شرکتی','فروشگاه آنلاین','سایت اختصاصی با پنل'], type:'partner', partner:'پویان', pm:'ash'},
+  saas:{line:'digital', name:'محصول تحت وب و SaaS', short:'طراحی و توسعه‌ی محصول نرم‌افزاری از صفر.', does:['تعریف محصول و نقشه‌ی ویژگی‌ها','طراحی UI/UX','توسعه و انتشار','پشتیبانی پس از انتشار'], dur:'بعد از برآورد', unit:'پروژه', p:[400,700,1200], tiers:['نسخه‌ی اولیه (MVP)','محصول کامل','پلتفرم چندبخشی'], note:'قیمت نهایی بعد از برآورد دقیق', type:'partner', partner:'پویان', pm:'ash'},
+  ui3d:{line:'digital', name:'طراحی UI و مدل‌سازی سه‌بعدی', short:'رابط کاربری کامل و آبجکت‌های سه‌بعدی.', does:['طراحی رابط کاربری سایت یا اپ','سیستم طراحی','مدل‌سازی سه‌بعدی محصول'], dur:'۲ تا ۶ هفته', unit:'پروژه', p:[30,70,150], type:'partner', partner:'پویان', pm:'ash'},
+  seo:{line:'digital', name:'رشد فروش آنلاین: آنالیتیکس، SEO و GEO', short:'دیده شدن در گوگل و موتورهای هوش مصنوعی.', does:['راه‌اندازی آنالیتیکس','سئوی فنی و محتوایی','بهینه‌سازی برای پاسخ‌های AI (GEO)','گزارش ماهانه'], dur:'حداقل ۳ ماه', unit:'ماهانه', monthly:true, p:[25,45,80], type:'partner', partner:'پویان', pm:'ash'},
+  infl:{line:'digital', name:'اینفلوئنسر مارکتینگ', short:'پیدا کردن اینفلوئنسر مناسب، مذاکره، اجرا و گزارش.', does:['تعیین هدف و بودجه','پیدا کردن و ارزیابی اینفلوئنسرها','مذاکره و اجرای کمپین','گزارش نتایج'], dur:'هر کمپین', unit:'کمپین', p:null, type:'infl', partner:'فرهاد', pm:'mae'},
+
+  evLaunch:{line:'events', name:'رویداد رونمایی و لانچ محصول', short:'معرفی محصول یا برند جدید به بازار، رسانه و مشتریان.', does:['ایده و سناریوی رویداد','مدیریت مکان، دعوت و مهمانان','هماهنگی تولید، دکور و پذیرایی','پوشش رسانه‌ای و محتوای پس از رویداد'], dur:'۴ تا ۸ هفته', unit:'هر رویداد', p:[40,80,160], tiers:['تا ۵۰ نفر','۵۰ تا ۲۰۰ نفر','بیش از ۲۰۰ نفر'], note:'هزینه‌ی سالن، پذیرایی و تولید جدا و با فاکتور', type:'partner', partner:'مهسا', pm:'mae'},
+  evConf:{line:'events', name:'همایش، سمینار و نشست تخصصی', short:'رویداد تخصصی برای مشتریان، نمایندگان یا صنعت.', does:['طراحی برنامه و سخنرانان','ثبت‌نام و دعوت','اجرای روز رویداد','گزارش و محتوای پس از رویداد'], dur:'۴ تا ۱۰ هفته', unit:'هر رویداد', p:[50,100,200], tiers:['نشست تا ۵۰ نفر','همایش ۵۰ تا ۳۰۰ نفر','همایش بزرگ یا چندروزه'], note:'هزینه‌ی سالن، پذیرایی و تولید جدا و با فاکتور', type:'partner', partner:'مهسا', pm:'mae'},
+  evTeam:{line:'events', name:'رویداد داخلی و تیم‌سازی', short:'گردهمایی کارکنان، جشن سازمانی یا برنامه‌ی تیم‌سازی.', does:['طراحی برنامه متناسب با هدف','هماهنگی مکان و اجرا','فعالیت‌های تیمی','عکس و گزارش'], dur:'۲ تا ۴ هفته', unit:'هر رویداد', p:[25,50,100], tiers:['تا ۳۰ نفر','۳۰ تا ۱۰۰ نفر','بیش از ۱۰۰ نفر'], note:'هزینه‌ی مکان و پذیرایی جدا', type:'partner', partner:'مهسا', pm:'mae'},
+
+  giftDedisl:{line:'gifts', name:'هدایای فلزی اختصاصی · ددیصل', short:'پلاک، جاسوییچی، گردنبند و پین با طرح و لوگوی سازمان؛ ساخت طرح دلخواه.', does:['پلاک و جاسوییچی با حک نام و لوگو','گردنبند و ست‌های اختصاصی','پین و بج با طرح دلخواه','بسته‌بندی هدیه'], dur:'بسته به تعداد', unit:'هر سفارش', p:null, ptext:'بر اساس تعداد', note:'تخفیف ویژه برای سفارش از طریق ره‌نگاشت', type:'shop', pm:'mae', partner:'ددیصل',
+    links:[{t:'اینستاگرام ددیصل', u:'https://www.instagram.com/dedislshop/', ig:true},{t:'سایت ددیصل', u:'https://dedislshop.com/'}]},
+  giftChichi:{line:'gifts', name:'هدایای سرامیکی دست‌ساز · چیچیلاس', short:'ماگ و ظروف سرامیکی دست‌ساز، تابلو کاشی و سفارش اختصاصی با طرح سازمان.', does:['ماگ و فنجان دست‌ساز با فیگور اختصاصی','تابلو کاشی','ظروف و هدایای سرامیکی سفارشی','هر سفارش اختصاصی در حیطه‌ی سفال و سرامیک'], dur:'بسته به تعداد', unit:'هر سفارش', p:null, ptext:'بر اساس تعداد', note:'تخفیف ویژه برای سفارش از طریق ره‌نگاشت', type:'shop', pm:'mae', partner:'چیچیلاس',
+    links:[{t:'اینستاگرام چیچیلاس', u:'https://www.instagram.com/chichilas.ceram/', ig:true}]},
+  giftPack:{line:'gifts', name:'طراحی پکیج هدیه‌ی سازمانی', short:'انتخاب هدیه، طراحی با هویت برند و بسته‌بندی برای نوروز، یلدا، رویدادها و مشتریان کلیدی.', does:['انتخاب هدیه از ددیصل، چیچیلاس و تأمین‌کنندگان دیگر','طراحی گیفت‌باکس و کارت با هویت برند','هماهنگی تولید و ارسال'], dur:'۲ تا ۴ هفته', unit:'طراحی', p:[15,30,60], note:'هزینه‌ی خود هدایا جدا و بر اساس تعداد', type:'in', team:{ash:60,mae:40}},
+};
+const defQty = p => p.type==='infl' ? 200 : p.monthly ? 3 : (p.defQty||1);
+const noPrice = p => p.type==='quote' || p.type==='shop';
+
+const PLANS = [
+  {id:'start', phase:'مرحله‌ی ۱ · تشخیص', name:'پلن شروع', dur:'۴ تا ۶ هفته', desc:'برای شرکتی که می‌خواهد بداند کجاست و از کجا شروع کند.',
+   items:[['diag',1,'عارضه‌یابی مارکتینگ و فروش'],['aiAudit',1,'ممیزی هوش مصنوعی سازمان'],['panelS',1,'راه‌اندازی پنل رودمپ'],['panelM',3,'پنل رودمپ · ۳ ماه']], price:255},
+  {id:'grow', phase:'مرحله‌ی ۲ · طراحی و اجرا', name:'پلن رشد فروش و برند', dur:'۶ ماه', star:true, desc:'استراتژی مارکتینگ همراه با اجرای سوشال، سئو و آموزش تیم.',
+   items:[['strat',1,'طراحی استراتژی مارکتینگ و فروش'],['insta',6,'استراتژی و مدیریت سوشال · ۶ ماه'],['seo',6,'آنالیتیکس، SEO و GEO · ۶ ماه'],['coachSocial',1,'کوچینگ سوشال مدیا'],['panelS',1,'راه‌اندازی پنل رودمپ'],['panelM',6,'پنل رودمپ · ۶ ماه']], price:940},
+  {id:'transform', phase:'مرحله‌ی ۳ · تحول', name:'پلن تحول هوشمند', dur:'۶ ماه', desc:'ایجنتیک کردن سازمان: از ممیزی AI تا ایجنت، داشبورد و آموزش مدیران.',
+   items:[['aiAudit',1,'ممیزی هوش مصنوعی سازمان'],['fde',3,'ایجنتیک‌سازی (FDE) · ۳ ماه'],['agent',2,'ساخت ۲ ایجنت اختصاصی'],['dash',1,'داشبورد هوشمند مدیریتی'],['dashM',3,'نگهداری داشبورد · ۳ ماه'],['coachAI',1,'کوچینگ هوش مصنوعی مدیران'],['panelS',1,'راه‌اندازی پنل رودمپ'],['panelM',6,'پنل رودمپ · ۶ ماه']], price:1330},
+  {id:'partner', phase:'مرحله‌ی ۴ · همراهی مستمر', name:'پلن شریک راهبردی', dur:'۱۲ ماه · پرداخت ماهانه', monthly:true, desc:'ره‌نگاشت به‌عنوان واحد مارکتینگ و هوش مصنوعی بیرونی شرکت شما.',
+   items:[['retainer',1,'مشاوره‌ی مستمر با دکتر صادقی'],['insta',1,'استراتژی و مدیریت سوشال'],['seo',1,'آنالیتیکس، SEO و GEO'],['dashM',1,'داشبورد هوشمند و نگهداری'],['panelM',1,'پنل رودمپ'],['klass',1/3,'یک روز آموزش سازمانی در هر فصل']], price:210},
+];
+
+/* ================= pricing structure (internal, editable) ================= */
+const PCT_DEF = {markup:25, profit:15, dev:10, ovh:5, office:5, ref:10};
+let PCT = Object.assign({}, PCT_DEF, store.get('rg-pct', {}));
+const PCT_META = [
+  ['markup','درصد روی قیمت شرکا','outsource = قیمت ÷ (۱ + این درصد)',0,50],
+  ['profit','سود','سود ره‌نگاشت',0,40],
+  ['dev','بودجه‌ی توسعه (هوش مصنوعی)','اشتراک‌ها، API و ابزار',0,30],
+  ['ovh','سربار','مدیریت، حسابداری، برند',0,20],
+  ['office','هزینه‌ی دفتر','اجاره، اینترنت، رفت‌وآمد',0,20],
+  ['ref','پاداش معرف','طبق تبصره، به معرف می‌رسد',0,20],
+];
+const wagePct = () => Math.max(0, 100 - PCT.profit - PCT.dev - PCT.ovh - PCT.office - PCT.ref);
+
+/* outsource and wage-weights of one line */
+function lineCost(p, v, q){
+  if(noPrice(p)) return {out:0, w:{}};
+  if(p.type==='partner') return {out: v/(1+PCT.markup/100), w:{[p.pm]:1}};
+  if(p.type==='infl'){ const fee = Math.max(q*.2, 20); return {out: q + fee/(1+PCT.markup/100), w:{[p.pm]:1}}; }
+  const tot = Object.values(p.team).reduce((s,x)=>s+x,0), w = {};
+  for(const k in p.team) w[k] = p.team[k]/tot;
+  return {out:0, w};
+}
+function priceOf(p, tier, qty){
+  if(noPrice(p)) return 0;
+  if(p.type==='infl') return qty + Math.max(qty*.2, 20);
+  return p.p[tier]*qty;
+}
+/* allocate a whole project: items = [{p, v, q}] ; weightsOverride = {dr:%,...} */
+function allocate(items, ref, disc, weightsOverride, extraOut){
+  let price = 0, out = extraOut||0; const wn = {dr:0,ash:0,alb:0,mae:0};
+  items.forEach(({p,v,q})=>{ const c = lineCost(p,v,q); price += v; out += c.out; const net = v - c.out; for(const k in c.w) wn[k] += net*c.w[k]; });
+  const discAmt = price*disc/100, total = price - discAmt, net = price - out;
+  const r = {price:total, list:price, discAmt, out, net, office:net*PCT.office/100, dev:net*PCT.dev/100, ovh:net*PCT.ovh/100, profit:net*PCT.profit/100 - discAmt, refAmt:net*PCT.ref/100, wages:net*wagePct()/100, ext:0, people:{dr:0,ash:0,alb:0,mae:0}, bd:{dr:{},ash:{},alb:{},mae:{}}};
+  let weights = weightsOverride;
+  if(!weights){ const s = Object.values(wn).reduce((a,b)=>a+b,0); weights = {}; for(const k in wn) weights[k] = s ? wn[k]/s*100 : 25; }
+  const ws = Object.values(weights).reduce((a,b)=>a+(+b||0),0) || 1;
+  for(const k in r.people){ const a = r.wages*(+weights[k]||0)/ws; r.people[k] += a; if(a) r.bd[k]['دستمزد'] = a; }
+  if(ref==='none') r.profit += r.refAmt;
+  else if(ref==='ext') r.ext = r.refAmt;
+  else { r.people[ref] += r.refAmt; r.bd[ref]['معرفی'] = (r.bd[ref]['معرفی']||0) + r.refAmt; }
+  r.weights = weights;
+  return r;
+}
+function splitBar(r){
+  const segs = [['out',r.out],['office',r.office],['dev',r.dev],['ovh',r.ovh],['profit',Math.max(0,r.profit)],['ext',r.ext], ...Object.keys(PEOPLE).map(k=>[k,r.people[k]])];
+  const tot = segs.reduce((s,[,v])=>s+Math.max(0,v),0) || 1;
+  const lab = k => PEOPLE[k]||PART[k];
+  return `<div class="bar">${segs.filter(([,v])=>v>0.001).map(([k,v])=>`<i style="width:${v/tot*100}%;background:${lab(k).c}" title="${lab(k).fa}: ${fa(v)}"></i>`).join('')}</div>
+    <div class="legend">${segs.filter(([,v])=>v>0.001).map(([k,v])=>`<span><em style="background:${lab(k).c}"></em>${lab(k).fa} <b>${fa(v)}</b></span>`).join('')}</div>`;
+}
+function teamText(p){
+  if(p.type==='in'){ const tot = Object.values(p.team).reduce((s,x)=>s+x,0); return 'تیم: ' + Object.entries(p.team).map(([k,w])=>`${PEOPLE[k].fa} ${fa(w/tot*100)}٪`).join(' · '); }
+  return `اجرا: ${p.partner} · مدیر پروژه: ${PEOPLE[p.pm].fa}`;
+}
+
+/* ================= logo: dotted mini + point cloud ================= */
+(function(){
+  const ctx = document.createElement('canvas').getContext('2d'), path = new Path2D(LOGO_D);
+  window.__logoPts = step => { const pts=[]; for(let y=250;y<1040;y+=step) for(let x=550;x<1460;x+=step){ const jx = x + (Math.random()-.5)*step*.7, jy = y + (Math.random()-.5)*step*.7; if(ctx.isPointInPath(path,jx,jy)) pts.push([jx,jy]); } return pts; };
+  // mini header logo: deterministic grid dots
+  const mini = []; for(let y=262;y<1030;y+=30) for(let x=560;x<1450;x+=30){ if(ctx.isPointInPath(path,x,y)) mini.push(`<circle cx="${x}" cy="${y}" r="13" fill="#1ebfcb"/>`); }
+  $('miniLogo').innerHTML = mini.join('');
+})();
+function pointCloud(cv){
+  const ctx = cv.getContext('2d'), rm = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const base = window.__logoPts(11).map(([x,y])=>({tx:x, ty:y, tz:(Math.random()-.5)*90, x:550+Math.random()*910, y:250+Math.random()*790, z:(Math.random()-.5)*900, r:.8+Math.random()*1.5, ph:Math.random()*6.28, a:.55+Math.random()*.45}));
+  const dust = Array.from({length:90},()=>({x:Math.random(), y:Math.random(), r:.5+Math.random()*1.1, s:.0002+Math.random()*.0005, a:.15+Math.random()*.35}));
+  let W=0,H=0,dpr=1,mx=0,my=0,hx=-999,hy=-999,t0=performance.now(),raf=0;
+  function size(){ dpr = Math.min(2, devicePixelRatio||1); W = cv.clientWidth; H = cv.clientHeight; cv.width = W*dpr; cv.height = H*dpr; }
+  size(); addEventListener('resize', size);
+  cv.addEventListener('pointermove', e=>{ const b = cv.getBoundingClientRect(); hx = e.clientX-b.left; hy = e.clientY-b.top; mx = (hx/W-.5); my = (hy/H-.5); });
+  cv.addEventListener('pointerleave', ()=>{ hx = hy = -999; mx = my = 0; });
+  function frame(now){
+    raf = requestAnimationFrame(frame);
+    if(!$('p-home').classList.contains('on') || document.hidden) return;
+    const t = (now - t0)/1000, k = rm ? 1 : Math.min(1, t/2.4), e = 1 - Math.pow(1-k, 3);
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+    const sc = Math.min(W/1000, H/880)*.86, cx = W/2, cy = H/2, ox = 1002, oy = 643;
+    const ay = (rm?0:Math.sin(t*.35)*.28) + mx*.7, ax = my*.35, ca = Math.cos(ay), sa = Math.sin(ay), cb = Math.cos(ax), sb = Math.sin(ax);
+    dust.forEach(d=>{ d.y -= d.s; if(d.y<0) d.y = 1; ctx.fillStyle = `rgba(160,230,236,${d.a})`; ctx.beginPath(); ctx.arc(d.x*W, d.y*H, d.r, 0, 6.283); ctx.fill(); });
+    for(const p of base){
+      const fx = p.x + (p.tx - p.x)*e, fy = p.y + (p.ty - p.y)*e, fz = p.z + (p.tz - p.z)*e + (rm?0:Math.sin(t*1.3+p.ph)*6);
+      let X = fx-ox, Y = fy-oy, Z = fz;
+      const x1 = X*ca + Z*sa, z1 = -X*sa + Z*ca, y1 = Y*cb - z1*sb, z2 = Y*sb + z1*cb;
+      const persp = 900/(900 + z2);
+      let sx = cx + x1*sc*persp, sy = cy + y1*sc*persp;
+      const dx = sx-hx, dy = sy-hy, d2 = dx*dx+dy*dy;
+      if(d2 < 4200){ const f = (1 - d2/4200)*18; const d = Math.sqrt(d2)||1; sx += dx/d*f; sy += dy/d*f; }
+      const depth = Math.max(.25, Math.min(1, persp*p.a));
+      ctx.fillStyle = `rgba(30,191,203,${depth})`;
+      ctx.beginPath(); ctx.arc(sx, sy, p.r*persp*Math.max(1, sc*2.4), 0, 6.283); ctx.fill();
+    }
+  }
+  raf = requestAnimationFrame(frame);
+}
+
+/* ================= render: home ================= */
+$('lineCards').innerHTML = LINES.map(L=>{
+  const n = Object.values(P).filter(p=>p.line===L.id && !p.hidden).length;
+  return `<button class="line-card" data-line="${L.id}"><div class="ic">${ICON[L.id]}</div><h3>${L.name}</h3><p>${L.short}</p><div class="cnt">${n.toLocaleString('fa-IR')} خدمت ←</div></button>`;
+}).join('') + `<button class="line-card" data-go="portfolio" style="background:var(--navy);color:#fff;border-color:var(--navy)"><div class="ic" style="background:rgba(30,191,203,.15)">${ICON.branding}</div><h3>نمونه‌کارها</h3><p style="color:#cfcbe6">برندبوک توکا، شودر، گلرنگ و نمونه‌های انیمیشن.</p><div class="cnt" style="color:var(--teal)">مشاهده ←</div></button>`;
+
+/* ================= render: mega + services ================= */
+function fromText(p){ return p.type==='infl'?'بودجه + ۲۰٪':noPrice(p)?p.ptext:'از '+fa(p.p[0])+(p.perMin?' / دقیقه':''); }
+$('megaInner').innerHTML = LINES.map(L=>`<div><h5>${ICON[L.id]}${L.name}</h5>${Object.entries(P).filter(([,p])=>p.line===L.id&&!p.hidden).map(([id,p])=>`<a data-open="${id}" role="button" tabindex="0">${p.name}<span>${fromText(p)}</span></a>`).join('')}</div>`).join('') + `<div><h5>${ICON.branding}بیشتر</h5><a data-go="plans" role="button" tabindex="0">پلن‌های جامع<span>۴ پلن</span></a><a data-go="smart" role="button" tabindex="0">محاسبه‌ی هوشمند<span>رایگان</span></a><a data-go="portfolio" role="button" tabindex="0">نمونه‌کارها<span>برندینگ و انیمیشن</span></a></div>`;
+let curLine = 'strategy';
+function linksHTML(p){ return (p.links||[]).map(l=>`<a class="ig ${l.ig?'':'alt'}" href="${l.u}" target="_blank" rel="noopener" data-link="1">${l.ig?IGI:''}${l.t}</a>`).join(''); }
+function renderServices(){
+  $('lineChips').innerHTML = LINES.map(L=>`<button class="chip ${L.id===curLine?'on':''}" data-chip="${L.id}">${L.name}</button>`).join('');
+  const L = LINES.find(x=>x.id===curLine);
+  const cards = Object.entries(P).filter(([,p])=>p.line===curLine && !p.hidden).map(([id,p])=>{
+    const from = p.type==='infl' ? `<span class="from">بودجه + <b>۲۰٪</b></span>` : noPrice(p) ? `<span class="from"><b style="font-size:15px">${p.ptext}</b></span>` : `<span class="from">از<b>${fa(p.p[0])}</b>میلیون${p.perMin?' / دقیقه':''}</span>`;
+    return `<div class="card" role="button" tabindex="0" data-open="${id}"><span class="unit">${p.unit}</span><h4>${p.name}</h4><p>${p.short}</p>${p.type==='shop'?`<div><span class="disc">تخفیف ویژه‌ی ره‌نگاشت</span></div><div class="links">${linksHTML(p)}</div>`:''}<div class="foot">${from}<span class="more">جزئیات ←</span></div></div>`;
+  }).join('');
+  const giftNote = curLine==='gifts' ? `<p class="muted" style="font-size:13.5px;margin:-6px 0 14px">هدایای سازمانی را می‌توانید مستقیم از فروشگاه‌های همکار ببینید؛ سفارش از طریق ره‌نگاشت تخفیف ویژه دارد و طراحی با هویت برند شما را هم انجام می‌دهیم.</p>` : '';
+  $('serviceList').innerHTML = `<div class="line-head"><h3>${L.name}</h3><span class="badge int-inline int">مسئول: ${L.lead}</span></div><p class="muted" style="margin:0 0 12px;font-size:14px">${L.short}</p>${giftNote}<div class="grid">${cards}</div>`;
+}
+
+/* ================= plans ================= */
+function planCalc(pl){
+  const items = pl.items.map(([id,q])=>({p:P[id], v:P[id].p[1]*q, q}));
+  const list = items.reduce((s,i)=>s+i.v,0);
+  const r = allocate(items, 'none', (list-pl.price)/list*100);
+  return {list, r};
+}
+function renderPlans(){
+  $('planGrid').innerHTML = PLANS.map(pl=>{
+    const {list} = planCalc(pl), save = Math.round((list-pl.price)/list*100);
+    return `<button class="plan ${pl.star?'star':''}" data-plan="${pl.id}"><span class="save">${save.toLocaleString('fa-IR')}٪ کمتر</span><div class="phase">${pl.phase}</div><h3>${pl.name}</h3><p>${pl.desc}</p><div class="dur">${pl.dur}</div><div class="price"><div class="old">جداگانه: ${fa(Math.round(list))}</div><div class="new">${fa(pl.price)} <small>${pl.monthly?'میلیون / ماه':'میلیون'}</small></div></div></button>`;
+  }).join('');
+}
+
+/* ================= modal ================= */
+const ov = $('ov'), modal = $('modal');
+function openModal(html, wide){ modal.className = 'modal' + (wide?' wide':''); modal.innerHTML = html; ov.classList.add('on'); document.body.style.overflow='hidden'; const c = modal.querySelector('.close, input'); c && c.focus(); }
+function closeModal(){ ov.classList.remove('on'); document.body.style.overflow=''; modal.innerHTML=''; }
+ov.addEventListener('click', e=>{ if(e.target===ov || e.target.closest('.close')) closeModal(); });
+
+function productModal(id){
+  const p = P[id], L = LINES.find(x=>x.id===p.line);
+  let tiers;
+  if(p.type==='infl') tiers = `<div class="tier mid" style="grid-column:1/-1"><div class="tn">قیمت</div><div class="tp">بودجه‌ی تبلیغات + ۲۰٪</div><div class="td">حداقل کارمزد ۲۰ میلیون · بودجه با رسید به اینفلوئنسرها پرداخت می‌شود</div></div>`;
+  else if(noPrice(p)) tiers = `<div class="tier mid" style="grid-column:1/-1"><div class="tn">قیمت</div><div class="tp" style="font-size:20px">${p.ptext}</div><div class="td">${p.note}</div></div>`;
+  else tiers = p.p.map((v,i)=>`<div class="tier ${i===1?'mid':''}"><div class="tn">${TIER[i]}</div><div class="tp">${fa(v)}</div><div class="td">${(p.tiers||TIER_DEF)[i]}</div></div>`).join('');
+  let intHTML = '';
+  if(!noPrice(p)){
+    const q = p.type==='infl' ? 200 : (p.defQty||1), v = priceOf(p,1,q);
+    const r = allocate([{p, v, q}], 'none', 0);
+    intHTML = `<div class="mint int"><div class="h">بخش داخلی · ${teamText(p)}</div><div class="muted" style="font-size:12px">${p.type==='infl'?'مثال: بودجه‌ی ۲۰۰ (مشتری ۲۴۰ می‌پردازد)':`روی قیمت سطح استاندارد (${fa(v)} میلیون${q>1?` برای ${fa(q)} ${p.perMin?'دقیقه':'واحد'}`:''})، بدون معرف`}</div>${splitBar(r)}</div>`;
+  }
+  const show = p.showcase ? `<button class="btn btn-line" data-pfgo="${p.showcase==='anim'?'anim':'brand'}">مشاهده‌ی نمونه‌کارها</button>` : '';
+  openModal(`
+    <div class="mhead"><button class="close" aria-label="بستن">×</button><div class="tag">${L.name}</div><h3>${p.name}</h3><p>${p.short}</p></div>
+    <div class="mbody">
+      <h4>چه چیزی تحویل می‌گیرید</h4><ul class="checks">${p.does.map(d=>`<li>${d}</li>`).join('')}</ul>
+      <h4>مدت و واحد</h4><div class="metas"><span>${p.dur}</span><span>قیمت ${p.unit}</span>${p.note?`<span>${p.note}</span>`:''}</div>
+      <h4>قیمت (میلیون تومان)</h4><div class="tiers">${tiers}</div>
+      ${p.links?`<h4>${p.type==='shop'?'فروشگاه':'نمونه‌ها'}</h4><div class="links" style="display:flex;gap:6px;flex-wrap:wrap">${linksHTML(p)}</div>`:''}
+      ${intHTML}
+      <div class="mfoot">${noPrice(p)&&p.type==='shop'?'':`<button class="btn btn-teal" data-add="${id}">افزودن به ماشین‌حساب</button>`}${show}</div>
+    </div>`);
+}
+function planModal(pid){
+  const pl = PLANS.find(x=>x.id===pid), {list, r} = planCalc(pl);
+  openModal(`
+    <div class="mhead"><button class="close" aria-label="بستن">×</button><div class="tag">${pl.phase}</div><h3>${pl.name}</h3><p>${pl.desc} · ${pl.dur}</p></div>
+    <div class="mbody">
+      <h4>اجزای پلن (قیمت جداگانه در سطح استاندارد)</h4>
+      <ul class="plist">${pl.items.map(([id,q,l])=>`<li><span>${l}</span><span>${fa(P[id].p[1]*q)}</span></li>`).join('')}</ul>
+      <div class="tiers" style="margin-top:14px">
+        <div class="tier"><div class="tn">جمع جداگانه</div><div class="tp" style="text-decoration:line-through;color:var(--muted)">${fa(Math.round(list))}</div></div>
+        <div class="tier mid"><div class="tn">قیمت پلن</div><div class="tp">${fa(pl.price)}</div><div class="td">${pl.monthly?'میلیون در ماه':'میلیون تومان'}</div></div>
+        <div class="tier"><div class="tn">صرفه‌جویی</div><div class="tp">${fa(Math.round(list-pl.price))}</div></div>
+      </div>
+      <div class="mint int"><div class="h">بخش داخلی · تقسیم این پلن (تخفیف از سود کم شده)</div>${splitBar(r)}<div class="muted" style="font-size:12px;margin-top:6px">سود بعد از تخفیف: ${fa(r.profit/pl.price*100)}٪ از قیمت پلن</div></div>
+      <div class="mfoot"><button class="btn btn-teal" data-addplan="${pl.id}">باز کردن در ماشین‌حساب</button></div>
+    </div>`);
+}
+
+/* ================= calculator ================= */
+let rows = [{id:'diag', tier:1, qty:1}];
+function optionsHTML(sel){ return LINES.map(L=>`<optgroup label="${L.name}">${Object.entries(P).filter(([,p])=>p.line===L.id && p.type!=='shop').map(([id,p])=>`<option value="${id}" ${id===sel?'selected':''}>${p.name}</option>`).join('')}</optgroup>`).join(''); }
+function qtyLabel(p){ return p.type==='infl' ? 'بودجه (میلیون)' : p.monthly ? 'تعداد ماه' : p.perMin ? 'تعداد دقیقه' : p.unit==='هر ساعت' ? 'تعداد ساعت' : p.unit==='هر روز' ? 'تعداد روز' : p.unit==='فصلی' ? 'تعداد فصل' : 'تعداد'; }
+function renderRows(){
+  $('rows').innerHTML = rows.map((r,i)=>{
+    const p = P[r.id];
+    return `<div class="crow" data-i="${i}">
+      <select data-f="id" aria-label="خدمت">${optionsHTML(r.id)}</select>
+      <select data-f="tier" aria-label="سطح" ${p.type==='infl'||noPrice(p)?'disabled':''}>${TIER.map((t,j)=>`<option value="${j}" ${j==r.tier?'selected':''}>${t}</option>`).join('')}</select>
+      <input data-f="qty" type="number" min="0" step="${p.type==='infl'?10:p.perMin?.5:1}" value="${r.qty}" aria-label="${qtyLabel(p)}">
+      <button class="x" data-del="${i}" aria-label="حذف">×</button>
+      <div class="hint">${qtyLabel(p)} · ${p.type==='infl'?'کارمزد ۲۰٪ بودجه، حداقل ۲۰':noPrice(p)?'قیمت بعد از برآورد؛ در جمع حساب نمی‌شود':`${fa(p.p[r.tier])} ${p.unit}`}</div>
+    </div>`;
+  }).join('') || '<p class="muted" style="font-size:13px">هنوز خدمتی انتخاب نشده.</p>';
+}
+function calcItems(){ return rows.map(r=>{ const p=P[r.id], q=Math.max(0,+r.qty||0); return {p, q, tier:r.tier, v:priceOf(p,r.tier,q)}; }).filter(x=>x.q>0); }
+function compute(){
+  const disc = +$('disc').value, ref = $('ref').value;
+  $('discOut').textContent = disc.toLocaleString('fa-IR') + '٪';
+  const items = calcItems(); let once = 0, monthly = 0;
+  $('tLines').innerHTML = items.map(({p,q,tier,v})=>{
+    if(noPrice(p)) return `<div><span>${p.name}</span><span class="muted">بعد از برآورد</span></div>`;
+    p.monthly ? (monthly += p.p[tier]) : (once += v);
+    const qtxt = p.type==='infl' ? `بودجه ${fa(q)}` : `${TIER[tier]} × ${fa(q)}${p.perMin?' دقیقه':''}`;
+    return `<div><span>${p.name} <span class="muted">(${qtxt})</span></span><span>${fa(v)}</span></div>`;
+  }).join('') || '<div><span class="muted">خدمتی انتخاب نشده</span><span></span></div>';
+  const r = allocate(items.filter(i=>!noPrice(i.p)), ref, disc);
+  $('tBig').innerHTML = `${fa(r.price)} <small>میلیون تومان</small>`;
+  $('tSub').textContent = r.discAmt ? `قیمت فهرست ${fa(r.list)} · تخفیف ${fa(r.discAmt)}` : (monthly ? `شامل ${fa(monthly)} میلیون خدمات ماهانه در ماه` : 'برآورد حدودی، بدون مالیات بر ارزش افزوده');
+  let pay = '';
+  if(once > 300) pay = `<b>برنامه‌ی پرداخت:</b> بخش پروژه‌ای (${fa(once)}) در سه قسط ۵۰ / ۳۰ / ۲۰ — ${fa(once*.5)} · ${fa(once*.3)} · ${fa(once*.2)}`;
+  else if(once > 0) pay = `<b>برنامه‌ی پرداخت:</b> بخش پروژه‌ای (${fa(once)}) نیمی پیش‌پرداخت (${fa(once/2)}) و نیمی هنگام تحویل`;
+  if(monthly) pay = (pay ? pay + '<br>' : '<b>برنامه‌ی پرداخت:</b> ') + `خدمات ماهانه: ${fa(monthly)} میلیون ابتدای هر ماه`;
+  $('tPay').innerHTML = pay || '<span class="muted">برنامه‌ی پرداخت بعد از انتخاب خدمت نمایش داده می‌شود.</span>';
+  $('cSplit').innerHTML = r.list ? splitBar(r) + peopleHTML(r) + (r.profit<0?'<div class="warn">تخفیف از سود بیشتر شده؛ سود منفی است.</div>':disc>10?'<div class="warn">تخفیف بیش از ۱۰٪ نیاز به تأیید دکتر صادقی دارد.</div>':'') : '<p class="muted" style="font-size:13px">خدمتی انتخاب نشده.</p>';
+}
+function peopleHTML(r){
+  return `<div class="people">${Object.keys(PEOPLE).map(k=>{ const parts = Object.entries(r.bd[k]).map(([t,v])=>`${t} ${fa(v)}`).join(' · ') || 'سهمی ندارد';
+    return `<div class="person" style="--pc:${PEOPLE[k].c}"><div class="nm">${PEOPLE[k].fa}</div><div class="amt">${fa(r.people[k])}</div><div class="bd">${parts}</div></div>`; }).join('')}</div>`;
+}
+$('rows').addEventListener('change', e=>{
+  const row = e.target.closest('.crow'); if(!row) return; const i = +row.dataset.i, f = e.target.dataset.f;
+  if(f==='id'){ rows[i].id = e.target.value; rows[i].qty = defQty(P[rows[i].id]); rows[i].tier = 1; renderRows(); }
+  else if(f==='tier'){ rows[i].tier = +e.target.value; renderRows(); }
+  compute();
+});
+$('rows').addEventListener('input', e=>{ if(e.target.dataset.f==='qty'){ rows[+e.target.closest('.crow').dataset.i].qty = e.target.value; compute(); }});
+$('rows').addEventListener('click', e=>{ const d = e.target.closest('[data-del]'); if(d){ rows.splice(+d.dataset.del,1); renderRows(); compute(); }});
+$('addRow').onclick = ()=>{ rows.push({id:'retainer', tier:1, qty:6}); renderRows(); compute(); };
+$('ref').onchange = compute; $('disc').oninput = compute;
+
+/* ================= internal: sliders + budget ================= */
+function renderSliders(){
+  $('sliders').innerHTML = PCT_META.map(([k,t,s,mn,mx])=>`<div class="sl"><label for="s-${k}">${t} <b id="o-${k}">${fa(PCT[k])}٪</b></label><input type="range" id="s-${k}" data-pct="${k}" min="${mn}" max="${mx}" step="1" value="${PCT[k]}"><small>${s}</small></div>`).join('')
+    + `<div class="sl rem"><label>دستمزد تیم (باقی‌مانده) <b id="o-wage">${fa(wagePct())}٪</b></label><small>اشکان، البرز، مائده، دکتر صادقی · از درآمد خالص</small></div>`;
+}
+$('sliders').addEventListener('input', e=>{ const k = e.target.dataset.pct; if(!k) return; PCT[k] = +e.target.value; $('o-'+k).textContent = fa(PCT[k])+'٪'; $('o-wage').textContent = fa(wagePct())+'٪'; store.set('rg-pct', PCT); refreshAll(); });
+$('resetPct').onclick = ()=>{ PCT = Object.assign({}, PCT_DEF); store.set('rg-pct', PCT); renderSliders(); refreshAll(); };
+
+let W8 = {dr:25, ash:25, alb:25, mae:25};
+function renderWsplit(){ $('wsplit').innerHTML = Object.keys(PEOPLE).map(k=>`<div class="field"><label for="w-${k}">${PEOPLE[k].fa}</label><input type="number" id="w-${k}" data-w="${k}" min="0" max="100" value="${Math.round(W8[k]*10)/10}"></div>`).join(''); }
+$('wsplit').addEventListener('input', e=>{ const k = e.target.dataset.w; if(!k) return; W8[k] = +e.target.value||0; budget(); });
+function budget(){
+  const price = Math.max(0, +$('bPrice').value||0), out = Math.min(price, Math.max(0, +$('bOut').value||0));
+  const fake = {p:{type:'in', team:{dr:1}}, v:price, q:1};
+  const r = allocate([fake], $('bRef').value, 0, W8, out);
+  const s = Object.values(W8).reduce((a,b)=>a+b,0);
+  $('wsum').textContent = `جمع: ${fa(s)}٪` + (Math.abs(s-100)>.5 ? ' (به نسبت تقسیم می‌شود)' : '');
+  $('bWages').innerHTML = `${fa(r.wages)} <small>میلیون تومان</small>`;
+  $('bSub').textContent = `${fa(wagePct())}٪ از درآمد خالص (${fa(r.net)}) · قیمت ${fa(price)} − outsource ${fa(out)}`;
+  const rowsT = [['out','outsource (شرکا)',r.out],['office','هزینه‌ی دفتر',r.office],['dev','بودجه‌ی توسعه (AI)',r.dev],['ovh','سربار',r.ovh],['profit','سود'+($('bRef').value==='none'?' (+ سهم معرف)':''),r.profit],['ext','معرف بیرونی',r.ext]];
+  $('bOutBox').innerHTML = splitBar(r) + peopleHTML(r) + `<div class="others">${rowsT.filter(x=>x[2]>0.001||x[0]==='profit').map(([k,t,v])=>`<div><span><em style="background:${PART[k].c}"></em>${t}</span><b>${fa(v)}</b></div>`).join('')}<div><span><b>جمع</b></span><b>${fa(price)}</b></div></div>`;
+}
+['bPrice','bOut','bRef'].forEach(id=>$(id).addEventListener('input', budget));
+function loadBudgetFromCalc(){
+  const r = allocate(calcItems().filter(i=>!noPrice(i.p)), 'none', +$('disc').value);
+  $('bPrice').value = Math.round(r.price*10)/10; $('bOut').value = Math.round(r.out*10)/10; $('bRef').value = $('ref').value;
+  W8 = {}; for(const k in r.weights) W8[k] = Math.round(r.weights[k]*10)/10; renderWsplit(); budget();
+}
+$('fromCalc').onclick = loadBudgetFromCalc;
+$('toBudget').onclick = ()=>{ loadBudgetFromCalc(); go('internal'); setTimeout(()=>$('budget').scrollIntoView({behavior:'smooth'}),50); };
+
+function renderTeamTable(){
+  $('teamTable').innerHTML = `<tr><th>محصول</th><th>دکتر صادقی</th><th>اشکان</th><th>البرز</th><th>مائده</th><th>نوع</th></tr>` + Object.values(P).filter(p=>!p.hidden).map(p=>{
+    if(p.type!=='in') return `<tr><td>${p.name}</td>${Object.keys(PEOPLE).map(k=>`<td class="num">${p.pm===k?'مدیر پروژه':'—'}</td>`).join('')}<td class="muted">outsource: ${p.partner}</td></tr>`;
+    const tot = Object.values(p.team).reduce((s,x)=>s+x,0);
+    return `<tr><td>${p.name}</td>${Object.keys(PEOPLE).map(k=>`<td class="num">${p.team[k]?fa(p.team[k]/tot*100)+'٪':'—'}</td>`).join('')}<td class="muted">داخلی</td></tr>`;
+  }).join('');
+}
+function renderEcon(){
+  const FIX = 35, rs = [150,250,400].map(R=>{ const out = R*.3/(1+PCT.markup/100), net = R-out; return {R,out,net,wages:net*wagePct()/100,profit:net*(PCT.profit+PCT.ref)/100,dev:net*PCT.dev/100,fix:net*(PCT.ovh+PCT.office)/100}; });
+  const lab = ['حداقل فعلی','هدف سالم','هدف رشد'];
+  $('econTable').innerHTML = `<tr><th>درآمد ماهانه</th><th>outsource</th><th>درآمد خالص</th><th>دستمزد تیم</th><th>میانگین هر نفر</th><th>توسعه (AI)</th><th>سربار + دفتر</th><th>سود (+معرف)</th></tr>` +
+    rs.map((r,i)=>`<tr><td class="num">${fa(r.R)} <span class="muted" style="font-weight:400">· ${lab[i]}</span></td><td class="num">${fa(r.out)}</td><td class="num">${fa(r.net)}</td><td class="num">${fa(r.wages)}</td><td class="num">${fa(r.wages/4)}</td><td class="num">${fa(r.dev)}</td><td class="num">${fa(r.fix)}</td><td class="num">${fa(r.profit)}</td></tr>`).join('');
+  const r0 = rs[0];
+  $('econNote').innerHTML = `<b>نتیجه:</b> با ۱۵۰ میلیون، دستمزد هر نفر به‌طور میانگین حدود <b>${fa(r0.wages/4)}</b> میلیون و بودجه‌ی توسعه + سربار + دفتر حدود <b>${fa(r0.dev+r0.fix)}</b> میلیون است؛ اگر هزینه‌ی ثابت ماهانه (اشتراک‌های AI، دفتر و…) حدود ${fa(FIX)} میلیون باشد، ${r0.dev+r0.fix>=FIX?'پوشش داده می‌شود':'پوشش داده نمی‌شود و کسری از سود جبران می‌شود'}. هدف سالم <b>۲۵۰ تا ۳۰۰ میلیون</b> در ماه است.`;
+}
+function refreshAll(){ compute(); budget(); renderEcon(); }
+
+/* ================= smart estimate ================= */
+const BIZ = [
+  {id:'fmcg', fa:'تولیدی و FMCG', ex:'آب معدنی، مواد غذایی، آرایشی'},
+  {id:'retail', fa:'فروشگاه و خرده‌فروشی', ex:'فروشگاه، زنجیره‌ای، فروش آنلاین'},
+  {id:'service', fa:'خدماتی', ex:'کلینیک، رستوران، آموزشگاه'},
+  {id:'b2b', fa:'B2B و صنعتی', ex:'تجهیزات، مواد اولیه، پیمانکاری'},
+  {id:'tech', fa:'استارتاپ و فناوری', ex:'اپ، پلتفرم، نرم‌افزار'},
+  {id:'personal', fa:'برند شخصی', ex:'پزشک، مشاور، مدرس'},
+];
+const PROBS = [
+  {id:'sales', fa:'فروش پایین است یا رشد نمی‌کند'},{id:'unknown', fa:'برند ما را کسی نمی‌شناسد'},{id:'identity', fa:'هویت برند و برندبوک منسجم نداریم'},
+  {id:'online', fa:'سوشال مدیا و حضور آنلاین ضعیف است'},{id:'website', fa:'سایت یا فروش آنلاین نداریم'},{id:'salesTeam', fa:'تیم فروش یا ویزیتورها ضعیف‌اند'},
+  {id:'launch', fa:'محصول جدید داریم یا وارد بازار جدید می‌شویم'},{id:'data', fa:'داده و گزارش درست برای تصمیم نداریم'},{id:'manual', fa:'کارهای تکراری زیاد و هزینه‌ی تیم بالاست'},
+  {id:'ceo', fa:'فشار کاری مدیرعامل زیاد است'},{id:'gifts', fa:'هدیه‌ی سازمانی برای مشتریان و کارکنان می‌خواهیم'},
+];
+const MODES = [{id:'start', fa:'اول تشخیص', ex:'کم‌هزینه؛ بعد تصمیم می‌گیریم'},{id:'full', fa:'راه‌حل کامل', ex:'تشخیص تا اجرا'}];
+const RULES = {
+  sales:{start:[['diag',1,'اول باید معلوم شود فروش دقیقاً کجا گیر کرده است']], full:[['diag',1,'پیدا کردن دلیل اصلی افت فروش'],['strat',1,'استراتژی فروش و بازار برای رشد'],['retainer',3,'همراهی ماهانه تا اجرای استراتژی']]},
+  unknown:{start:[['diag',1,'بررسی جایگاه برند در ذهن مشتری و رقبا']], full:[['brandStrat',1,'تعریف جایگاه و پیام برند'],['adPack',1,'کمپین تبلیغاتی برای دیده شدن'],['insta',3,'حضور مستمر در شبکه‌های اجتماعی']]},
+  identity:{start:[['brandStrat',1,'اول جایگاه و پیام برند مشخص شود']], full:[['brandbook',1,'برندبوک کامل: استراتژی، هویت بصری و راهنما']]},
+  online:{start:[['coachSocial',1,'تیم خودتان را برای سوشال آماده می‌کنیم']], full:[['insta',3,'استراتژی و مدیریت سوشال'],['seo',3,'دیده شدن در گوگل و پاسخ‌های هوش مصنوعی']]},
+  website:{start:[['web',1,'سایت پایه برای حضور و فروش آنلاین']], full:[['web',1,'طراحی و ساخت سایت یا فروشگاه'],['seo',3,'آوردن مشتری از گوگل به سایت']]},
+  salesTeam:{start:[['klass',1,'یک روز آموزش فشرده‌ی تیم فروش']], full:[['klass',3,'دوره‌ی آموزش فروش، مدیران منطقه و ویزیتورها'],['coachAI',1,'ابزار هوش مصنوعی برای مدیر فروش']]},
+  launch:{start:[['research',1,'تحقیق بازار و مشتری پیش از ورود']], full:[['research',1,'تحقیق بازار و مشتری'],['strat',1,'استراتژی ورود به بازار'],['adPack',1,'کمپین معرفی'],['evLaunch',1,'رویداد رونمایی']]},
+  data:{start:[['aiAudit',1,'بررسی داده‌ها و فرصت‌های گزارش هوشمند']], full:[['dash',1,'داشبورد مدیریتی با گزارش خودکار'],['dashM',3,'نگهداری و به‌روزرسانی داشبورد']]},
+  manual:{start:[['aiAudit',1,'پیدا کردن کارهایی که با AI خودکار می‌شوند']], full:[['aiAudit',1,'نقشه‌ی فرصت‌های خودکارسازی'],['agent',1,'ساخت اولین ایجنت برای پرتکرارترین کار'],['fde',3,'متخصص ما داخل سازمان برای ایجنتیک کردن کارها']]},
+  ceo:{start:[['coachCEO',1,'کوچینگ فراغت و ذهن‌آگاهی برای مدیرعامل']], full:[['coachCEO',1,'کوچینگ فراغت و ذهن‌آگاهی'],['coachAI',1,'ابزار AI برای سبک‌تر شدن کار روزانه‌ی مدیر']]},
+  gifts:{start:[['giftPack',1,'طراحی پکیج هدیه با هویت برند شما']], full:[['giftPack',1,'طراحی پکیج هدیه با هویت برند شما'],['giftDedisl',1,'هدایای فلزی اختصاصی با لوگو (تخفیف ره‌نگاشت)'],['giftChichi',1,'هدایای سرامیکی دست‌ساز (تخفیف ره‌نگاشت)']]},
+};
+const BIZ_EXTRA = {
+  fmcg:[['unknown','infl',100,'برای کالای مصرفی، اینفلوئنسر سریع‌ترین راه دیده شدن است'],['salesTeam','klass',3,'ویزیتورها و پخش، قلب فروش FMCG هستند'],['sales','evConf',1,'نشست با نمایندگان و پخش‌کننده‌ها'],['unknown','anim',2,'انیمیشن کوتاه برای معرفی محصول']],
+  retail:[['sales','insta',3,'برای خرده‌فروشی، سوشال اصلی‌ترین کانال جذب است'],['sales','perf',3,'تبلیغات هدفمند و ریتارگتینگ']],
+  service:[['unknown','seo',3,'مشتری خدمات اول در گوگل جستجو می‌کند']],
+  b2b:[['sales','evConf',1,'همایش تخصصی برای مشتریان صنعتی'],['unknown','research',1,'شناخت تصمیم‌گیرندگان خرید']],
+  tech:[['sales','seo',3,'رشد ارگانیک برای محصول دیجیتال'],['launch','web',1,'سایت محصول برای لانچ'],['unknown','anim',2,'انیمیشن توضیحی محصول']],
+  personal:[['unknown','coachSocial',1,'ساختن برند شخصی در سوشال'],['identity','logo',1,'لوگوی برند شخصی']],
+};
+const W = {biz:null, size:1, probs:new Set(), mode:'full', off:new Set()};
+function wRender(){
+  $('wBiz').innerHTML = BIZ.map(b=>`<button class="opt ${W.biz===b.id?'on':''}" data-wbiz="${b.id}">${b.fa}<small>${b.ex}</small></button>`).join('');
+  $('wSize').innerHTML = TIER.map((t,i)=>`<button class="opt ${W.size===i?'on':''}" data-wsize="${i}">${t}<small>${TIER_DEF[i]}</small></button>`).join('');
+  $('wProb').innerHTML = PROBS.map(p=>`<button class="opt ${W.probs.has(p.id)?'on':''}" data-wprob="${p.id}">${p.fa}</button>`).join('');
+  $('wMode').innerHTML = MODES.map(m=>`<button class="opt ${W.mode===m.id?'on':''}" data-wmode="${m.id}">${m.fa}<small>${m.ex}</small></button>`).join('');
+  wCompute();
+}
+function wItems(){
+  const map = new Map(), add = (id,q,why) => { if(map.has(id)){ const x=map.get(id); x.q=Math.max(x.q,q); if(!x.why.includes(why)) x.why.push(why); } else map.set(id,{id,q,why:[why]}); };
+  W.probs.forEach(pr => RULES[pr][W.mode].forEach(([id,q,why])=>add(id,q,why)));
+  if(W.mode==='full'){ (BIZ_EXTRA[W.biz]||[]).forEach(([pr,id,q,why])=>{ if(W.probs.has(pr)) add(id,q,why); }); if(map.size>=3){ add('panelS',1,'پیگیری همه‌ی کارها در پنل رودمپ'); add('panelM',3,'اشتراک پنل رودمپ'); } }
+  return [...map.values()];
+}
+let wLast = [];
+function wCompute(){
+  if(!(W.biz && W.probs.size)){ $('wRecs').innerHTML = `<div class="empty">${W.biz?'حداقل یک مشکل انتخاب کنید.':'نوع کسب‌وکار و حداقل یک مشکل را انتخاب کنید.'}</div>`; $('wTotal').innerHTML='۰ <small>میلیون تومان</small>'; $('wSub').textContent='برای دیدن پیشنهاد، نوع کسب‌وکار و حداقل یک مشکل را انتخاب کنید.'; $('wActions').style.display='none'; wLast=[]; return; }
+  wLast = wItems(); let total = 0, monthly = 0;
+  $('wRecs').innerHTML = wLast.map(it=>{
+    const p = P[it.id], v = priceOf(p, W.size, it.q), on = !W.off.has(it.id);
+    if(on){ total += v; if(p.monthly) monthly += p.p[W.size]; }
+    const qtxt = p.type==='infl' ? `بودجه‌ی ${fa(it.q)} + کارمزد` : noPrice(p) ? 'تخفیف ره‌نگاشت' : p.monthly ? `${fa(it.q)} ماه` : p.perMin ? `${fa(it.q)} دقیقه` : it.q>1 ? `× ${fa(it.q)}` : p.unit;
+    return `<div class="rec ${on?'':'off'}"><input type="checkbox" ${on?'checked':''} data-woff="${it.id}" aria-label="${p.name}"><div><div class="rn" data-open="${it.id}">${p.name}</div><div class="rw">${it.why.join(' · ')}</div></div><div class="rp">${noPrice(p)?p.ptext:fa(v)}<small>${qtxt}</small></div></div>`;
+  }).join('');
+  $('wTotal').innerHTML = `${fa(total)} <small>میلیون تومان</small>`;
+  $('wSub').textContent = `${BIZ.find(b=>b.id===W.biz).fa} · سطح ${TIER[W.size]}` + (monthly ? ` · شامل ${fa(monthly)} میلیون خدمات ماهانه در ماه` : '') + ' · برآورد حدودی';
+  $('wActions').style.display = '';
+}
+$('wRecs').addEventListener('change', e=>{ const id=e.target.dataset.woff; if(!id) return; e.target.checked?W.off.delete(id):W.off.add(id); wCompute(); });
+$('wToCalc').onclick = ()=>{ rows = wLast.filter(it=>!W.off.has(it.id) && P[it.id].type!=='shop').map(it=>({id:it.id, tier:W.size, qty:it.q})); $('disc').value=0; renderRows(); compute(); go('calc'); toast('پیشنهاد به ماشین‌حساب منتقل شد'); };
+
+/* ================= portfolio ================= */
+const BOOK=[['ttoka-01','جلد برندبوک'],['ttoka-06','فهرست مطالب'],['ttoka-21','ماموریت برند'],['ttoka-33','کهن‌الگوی برند'],['ttoka-43','ساختار و حاشیه‌ی امن نشان'],['ttoka-45','کاربردهای مجاز و نادرست'],['ttoka-49','تایپوگرافی'],['ttoka-52','رنگ سازمانی'],['ttoka-59','کارت ملاقات'],['ttoka-62','سربرگ'],['ttoka-75','تندیس؛ مدل سه‌بعدی'],['ttoka-77','تندیس ساخته‌شده'],['ttoka-79','کارت شناسایی'],['ttoka-85','لباس فرم همکاران'],['ttoka-87','هدایای تبلیغاتی'],['ttoka-103','قوانین طراحی فضا'],['ttoka-107','شبکه‌های اجتماعی'],['ttoka-117','رایحه‌ی سازمانی']];
+const CASES=[
+  {t:'توکا · توسعه تجارت امید کارآفرین', p:'برندبوک ۱۲۸ صفحه‌ای ده‌فصلی؛ از راهبرد تا تندیس، فضا و رایحه.', cover:'ttoka-01', pages:BOOK.map(b=>b[0])},
+  {t:'شودر · شیرآلات', p:'دفترچه‌ی هویت بصری ۹۷ صفحه‌ای: لوگو، اوراق، بیلبورد، بسته‌بندی و لباس کار.', cover:'shd-24', pages:['shd-24','shd-12','shd-47','shd-71','shd-77','shd-86']},
+  {t:'گروه پتروشیمی سیوند', p:'اوراق اداری با پترن اختصاصی؛ گروه گلرنگ.', cover:'siv-04', pages:['siv-03','siv-04','siv-05']},
+  {t:'گروه صنعتی گلرنگ', p:'کمپین نمایشگاه کار و جشنواره‌ی ستارگان گلرنگ.', cover:'gol-05', pages:['gol-01','gol-05','gol-06','gol-09','gl-00','gl-11','gl-13','gl-15','gl-19','gl-23']},
+];
+const GAL=[['po-06','لوگو و هویت','مرکز توسعه‌ی رهبری فضلی'],['po-08','لوگو و هویت','گروه سیوند'],['po-10','لوگو و هویت','بلوط'],['po-12','لوگو و هویت','TTOKA'],['po-14','لوگو و هویت','Opalia'],['po-16','لوگو و هویت','گیفت کارت'],['po-18','لوگو و هویت','IGIA Group'],['po-20','لوگو و هویت','AMA Agency'],['po-24','لوگو و هویت','Ba-To.co'],['po-26','لوگو و هویت','مجموعه لوگو'],['gp-09','لوگو و هویت','Fitmeet'],['gp-47','لوگو و هویت','Konnectile'],['gp-85','لوگو و هویت','گالری طلای پازوکی‌نیا'],
+  ['po-33','شبکه‌ی اجتماعی','محتوای شبکه‌ی اجتماعی'],['po-28','شبکه‌ی اجتماعی','طراحی پست و استوری'],['po-43','تبلیغات و بسته‌بندی','بیلبورد و محیطی'],['po-47','تبلیغات و بسته‌بندی','بسته‌بندی کنسرو'],['po-63','تبلیغات و بسته‌بندی','Alton'],['gp-57','تبلیغات و بسته‌بندی','پوستر Tehran Grand Prix'],['gp-60','تبلیغات و بسته‌بندی','پوستر Stella'],
+  ['po-50','سه‌بعدی و محاسباتی','رندر سه‌بعدی'],['po-51','سه‌بعدی و محاسباتی','بسته‌بندی سه‌بعدی'],['po-52','سه‌بعدی و محاسباتی','Motorbike'],['cd-01','سه‌بعدی و محاسباتی','Parametric Bricks'],['cd-04','سه‌بعدی و محاسباتی','Physarum'],['cd-08','سه‌بعدی و محاسباتی','Winabox · بسته‌بندی پارامتریک'],['cd-11','سه‌بعدی و محاسباتی','پرینت سرامیک با بازوی KUKA'],['gp-24','سه‌بعدی و محاسباتی','UI · اپ دستور پخت']];
+const PH=[
+ {n:'فاز ۱',t:'هویت مفهومی',s:'خدمات تحقیقی',i:['شفاف‌سازی و نهایی‌سازی اهداف و استراتژی‌های مارکتینگ','مطالعات اولیه و تحقیقات درونی برند و سازمان','نقشه‌ی ارتباط برند و سازمان و اهمیت ذی‌نفعان','زیست‌بوم ارتباط برند و سند SWOT','بررسی نگرش مدیران عالی سازمان','مطالعه‌ی بازار و رقبا (تحلیل 5C) و برندهای برتر بین‌المللی','شناسایی تمایزها و مزیت‌های رقابتی','بیانیه‌ی اشتراکی برند و ممیزی برند']},
+ {n:'فاز ۲',t:'هویت استراتژیک',s:'خدمات تحلیلی',i:['اثربخشی استراتژی‌های قبلی','کانال‌های ارتباطی با ذی‌نفعان','همسویی‌ها و مغایرت‌های برند و سازمان','رقبا به تفکیک سبد محصول','تعریف محصولات و خدمات (ماتریس Ansoff)','راهبرد ارتباطی با هر گروه ذی‌نفع','نقاط تماس با مشتری','بینش فعلی و بینش مطلوب مخاطب','مدل تخصیص منابع و فهرست اولویت‌دار اقلام برندسازی']},
+ {n:'فاز ۳',t:'هویت کلامی',s:'خدمات تدوینی',i:['جوهره و عوامل جذابیت برند','استراتژی‌های کلان برندسازی و ایده‌های محوری','جایگاه رقابتی و بیانیه‌ی جایگاه','طراحی نام برند','چشم‌انداز، مأموریت و ارزش‌ها','منشور هویت برند (مدل کاپفر)','نردبان مزایا و نردبان احساسی','شخصیت و الگوهای رفتاری برند','واژگان و پیام‌های کلیدی','معماری برند، تگ‌لاین و سبک اسلوگان','سند هویت کلامی']},
+ {n:'فاز ۴',t:'هویت بصری',s:'خدمات طراحی',i:['لوگو و لوگوتایپ فارسی و انگلیسی','قوانین و حریم استفاده از لوگو','تایپوگرافی، رنگ‌های مجاز و غیرمجاز','امضای سازمانی و معماری لوگو','واریاسیون‌ها و کاربردهای افقی و عمودی','قوانین لوگو در مشارکت و حمایت','پترن، نقش‌مایه و متریال چاپی و دیجیتال','اوراق اداری کامل و کارت‌های پرسنلی','کارت دعوت، تبریک و هدیه','امضای الکترونیکی و پرچم‌ها','سند هویت بصری و بسته‌ی معرفی برند']},
+ {n:'فاز ۵',t:'ورود به بازار',s:'خدمات قبل از مارکتینگ',i:['لی‌اوت سایت و کاتالوگ دیجیتال','استانداردسازی بصری شبکه‌های اجتماعی','رابط گرافیکی سایت و اپلیکیشن','ویدیوهای سازمانی','بسته‌ی معرفی جامع برند','اقلام باشگاه مشتریان','کمپین و رویداد رونمایی برند','نقشه‌ی راه برند و استراتژی‌های خرد','فهرست اقلام تبلیغاتی و برنامه‌ی رسانه']}
+];
+const PKG=[{n:'پایه',p:285,d:['هویت دوزبانه (نشان و نوشتار)','رنگ، تایپوگرافی، گرید و پترن','۵ قلم اداری','برندبوک و فایل‌های نهایی']},{n:'توسعه‌یافته',p:349,rec:1,d:['همه‌ی موارد پکیج پایه','۵ قلم سازمانی (بج، لباس، گیفت‌باکس، ماگ، خودکار)','کانسپت و مدل سه‌بعدی تندیس + ۳ رندر']},{n:'کامل',p:403.4,d:['همه‌ی موارد پکیج توسعه‌یافته','حداکثر ۵ آیکن اختصاصی','۶ قالب پایه‌ی شبکه‌ی اجتماعی']}];
+const ENABLE_VIDEO_PREVIEWS = false;
+function videoPreview(v){
+  if(ENABLE_VIDEO_PREVIEWS) return `<video class="${v.tall?'tall':''}" src="${v.src}" controls preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture playsinline></video>`;
+  return `<div class="vimg" role="status" style="aspect-ratio:${v.tall?'9/16':'16/9'};border-radius:0;background:var(--navy);display:grid;place-items:center;color:var(--teal);padding:24px;text-align:center">نمونه‌ویدئو به‌زودی اضافه می‌شود</div>`;
+}
+const VIDS=[
+  {src:'yaser/1.mp4', t:'موشن فلت توضیحی', p:13, d:'تحویل ۱ هفته · مناسب ویدئوی آموزشی و معرفی خدمات'},
+  {src:'yaser/2.mp4', t:'موشن حرفه‌ای', p:26, d:'تحویل ۲ هفته · کاراکتر، دیتا و ترنزیشن‌های روان'},
+  {src:'yaser/4.mp4', t:'کاراکتر و تصویرسازی اختصاصی', p:45.5, d:'تحویل ۱ ماه · فریم‌به‌فریم با تصویرسازی', tall:true},
+  {src:'yaser/water_v01.mp4', t:'نمونه‌ی سه‌بعدی و جلوه‌ی ویژه', p:null, d:'قیمت بر اساس سبک و مدت'},
+];
+let bi = 0;
+function vimg(k, cls='', extra=''){ return `<div class="vimg ${cls}" role="img" style="background-image:url('${IMG(k)}')${extra}"></div>`; }
+function book(i){ bi = (i+BOOK.length)%BOOK.length; $('bookMain').style.backgroundImage = `url('${IMG(BOOK[bi][0])}')`; $('bookTitle').textContent = BOOK[bi][1]; $('bookCount').textContent = `· ${(bi+1).toLocaleString('fa-IR')} از ${BOOK.length.toLocaleString('fa-IR')}`; document.querySelectorAll('#bookThumbs button').forEach((b,k)=>b.classList.toggle('on',k===bi)); }
+let LB = {list:[], i:0};
+function lightbox(list, i){ LB = {list, i}; openModal(`<button class="close" aria-label="بستن">×</button><div class="lbx protect">${vimg(list[i].k,'','')}<div class="cap"><span>${list[i].t} · ${(i+1).toLocaleString('fa-IR')} از ${list.length.toLocaleString('fa-IR')}</span><span class="nav"><button data-lb="-1" aria-label="قبلی">→</button> <button data-lb="1" aria-label="بعدی">←</button></span></div></div>`, true); }
+function renderPortfolio(){
+  $('bookThumbs').innerHTML = BOOK.map((b,i)=>`<button style="background-image:url('${IMG(b[0])}')" data-bk="${i}" aria-label="${b[1]}"></button>`).join(''); book(0);
+  $('cases').innerHTML = CASES.map((c,i)=>`<button class="case" data-case="${i}">${vimg(c.cover)}<div class="tx"><h4>${c.t}</h4><p>${c.p}</p><p style="color:var(--teal-d);font-weight:700;margin-top:4px">${c.pages.length.toLocaleString('fa-IR')} صفحه ←</p></div></button>`).join('');
+  $('phTabs').innerHTML = PH.map((p,i)=>`<button class="chip ${i===0?'on':''}" data-ph="${i}">${p.n} · ${p.t}</button>`).join(''); phase(0);
+  $('pkgs').innerHTML = PKG.map(k=>`<div class="pkg ${k.rec?'pkg-rec':''}"><h4>${k.n}${k.rec?' <span class="disc" style="margin:0 6px;vertical-align:middle">پیشنهادی</span>':''}</h4><div class="pp">${fa(k.p)} <small>میلیون تومان</small></div><ul>${k.d.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+  const cats = ['همه', ...new Set(GAL.map(g=>g[1]))];
+  $('galF').innerHTML = cats.map((c,i)=>`<button class="chip ${i===0?'on':''}" data-gf="${c}">${c}</button>`).join(''); gal('همه');
+  $('vids').innerHTML = VIDS.map(v=>`<div class="vid">${videoPreview(v)}<div class="tx"><h4>${v.t}</h4><div class="pp">${v.p?fa(v.p)+' <small>میلیون / دقیقه</small>':'<small>بعد از برآورد</small>'}</div><p>${v.d}</p></div></div>`).join('')
+    + `<div class="vid"><div class="vimg" style="aspect-ratio:16/9;border-radius:0;background:var(--navy);display:grid;place-items:center;color:var(--teal);font-size:40px">▤</div><div class="tx"><h4>استوری موشن تک‌فریم</h4><div class="pp">${fa(6.5)} <small>میلیون / استوری</small></div><p>تحویل ۲ روز · اگر عکاسی یا تصویربرداری لازم باشد قیمت فرق می‌کند</p></div></div>`;
+}
+function phase(i){ const p = PH[i]; document.querySelectorAll('#phTabs .chip').forEach((b,k)=>b.classList.toggle('on',k===i)); $('phBody').innerHTML = `<h4 style="font-size:16px;font-weight:800">${p.n} · ${p.t} <span class="muted" style="font-weight:400;font-size:13px">· ${p.s}</span></h4><ol>${p.i.map(x=>`<li>${x}</li>`).join('')}</ol>`; }
+let galCur = 'همه';
+function gal(c){ galCur = c; document.querySelectorAll('#galF .chip').forEach(b=>b.classList.toggle('on', b.dataset.gf===c)); const list = GAL.filter(g=>c==='همه'||g[1]===c); $('gal').innerHTML = list.map((g,i)=>`<figure data-g="${i}">${vimg(g[0])}<figcaption>${g[2]}</figcaption></figure>`).join(''); }
+function pfTab(t){ document.querySelectorAll('#pfTabs .chip').forEach(b=>b.classList.toggle('on', b.dataset.pf===t)); $('pf-brand').style.display = t==='brand'?'':'none'; $('pf-anim').style.display = t==='anim'?'':'none'; if(t!=='anim') document.querySelectorAll('#vids video').forEach(v=>v.pause()); }
+/* view-only guards */
+['contextmenu','dragstart'].forEach(ev=>document.addEventListener(ev, e=>{ if(e.target.closest('.protect, video, .vimg')) e.preventDefault(); }));
+
+/* ================= password gate ================= */
+const PW_HASH = 'f931c308fc5b60b421c09969912839dff2776957d98b8d2f91c554ed8fc80f78';
+function sha256(ascii){function rr(v,a){return(v>>>a)|(v<<(32-a))}var mp=Math.pow,mw=mp(2,32),res='',words=[],bl=ascii.length*8,hash=[],k=[],pc=0,comp={},i,j;for(var c=2;pc<64;c++){if(!comp[c]){for(i=0;i<313;i+=c)comp[i]=c;hash[pc]=(mp(c,.5)*mw)|0;k[pc++]=(mp(c,1/3)*mw)|0}}ascii+='\x80';while(ascii.length%64-56)ascii+='\x00';for(i=0;i<ascii.length;i++){j=ascii.charCodeAt(i);if(j>>8)return'';words[i>>2]|=j<<((3-i)%4)*8}words[words.length]=((bl/mw)|0);words[words.length]=bl;for(j=0;j<words.length;){var w=words.slice(j,j+=16),old=hash;hash=hash.slice(0,8);for(i=0;i<64;i++){var w15=w[i-15],w2=w[i-2],a=hash[0],e=hash[4],t1=hash[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&hash[5])^((~e)&hash[6]))+k[i]+(w[i]=(i<16)?w[i]:(w[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0),t2=(rr(a,2)^rr(a,13)^rr(a,22))+((a&hash[1])^(a&hash[2])^(hash[1]&hash[2]));hash=[(t1+t2)|0].concat(hash);hash[4]=(hash[4]+t1)|0}for(i=0;i<8;i++)hash[i]=(hash[i]+old[i])|0}for(i=0;i<8;i++){for(j=3;j+1;j--){var b=(hash[i]>>(j*8))&255;res+=((b<16)?0:'')+b.toString(16)}}return res}
+const normDigits = s => s.replace(/[۰-۹]/g, d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g, d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).trim();
+let pending = null;
+function askPassword(next){
+  pending = next || 'internal';
+  openModal(`<div class="mhead"><button class="close" aria-label="بستن">×</button><div class="tag">فقط تیم ره‌نگاشت</div><h3>ورود به بخش داخلی</h3><p>ساختار قیمت‌گذاری، دستمزدها و تقسیم بودجه.</p></div>
+    <form class="pw" id="pwForm"><label for="pwIn" class="muted" style="font-size:13px">رمز عبور</label><input id="pwIn" type="password" inputmode="numeric" autocomplete="current-password"><div class="err" id="pwErr"></div><button class="btn btn-teal" style="width:100%;justify-content:center">ورود</button></form>`);
+  $('pwForm').onsubmit = e=>{ e.preventDefault(); if(sha256(normDigits($('pwIn').value))===PW_HASH){ try{sessionStorage.setItem('rg-int','1')}catch(err){} closeModal(); setInternal(true); go(pending); toast('خوش آمدید'); } else { $('pwErr').textContent = 'رمز اشتباه است.'; $('pwIn').select(); } };
+}
+function setInternal(on){
+  document.body.classList.toggle('internal', on);
+  $('lockTxt').textContent = on ? 'بخش داخلی · خروج' : 'ورود تیم';
+  if(!on){ try{sessionStorage.removeItem('rg-int')}catch(e){} if($('p-internal').classList.contains('on')) go('home'); }
+  renderServices(); refreshAll();
+}
+$('lockBtn').onclick = ()=> document.body.classList.contains('internal') ? setInternal(false) : askPassword('internal');
+
+/* ================= mega ================= */
+const mega = $('mega'), menuBtn = $('menuBtn');
+function setMega(on){ mega.classList.toggle('on', on); menuBtn.setAttribute('aria-expanded', on); menuBtn.textContent = on ? 'بستن منو ▴' : 'همه‌ی محصولات ▾'; }
+menuBtn.onclick = e => { e.stopPropagation(); setMega(!mega.classList.contains('on')); };
+document.addEventListener('click', e=>{ if(mega.classList.contains('on') && !e.target.closest('#mega') && e.target!==menuBtn) setMega(false); }, true);
+mega.addEventListener('click', e=>{ if(e.target.closest('[data-open],[data-go]')) setMega(false); });
+
+/* ================= routing & events ================= */
+const PAGES = ['home','services','plans','smart','portfolio','method','calc','terms','internal'];
+function go(page){
+  if(!PAGES.includes(page)) page='home';
+  if(page==='internal' && !document.body.classList.contains('internal')){ askPassword('internal'); return; }
+  PAGES.forEach(x=>$('p-'+x).classList.toggle('on', x===page));
+  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on', b.dataset.go===page));
+  if(page!=='portfolio') document.querySelectorAll('#vids video').forEach(v=>v.pause());
+  try{ history.replaceState(null,'','#'+page); }catch(e){}
+  window.scrollTo({top:0, behavior:'instant'});
+}
+function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(toast.h); toast.h=setTimeout(()=>el.classList.remove('on'),1800); }
+
+document.addEventListener('click', e=>{
+  if(e.target.closest('[data-link]')) return;
+  const g = e.target.closest('[data-go]'); if(g){ closeModal(); go(g.dataset.go); return; }
+  const l = e.target.closest('[data-line]'); if(l){ curLine = l.dataset.line; renderServices(); go('services'); return; }
+  const c = e.target.closest('[data-chip]'); if(c){ curLine = c.dataset.chip; renderServices(); return; }
+  const o = e.target.closest('[data-open]'); if(o){ productModal(o.dataset.open); return; }
+  const pl = e.target.closest('[data-plan]'); if(pl){ planModal(pl.dataset.plan); return; }
+  const a = e.target.closest('[data-add]'); if(a){ rows.push({id:a.dataset.add, tier:1, qty:defQty(P[a.dataset.add])}); renderRows(); compute(); closeModal(); go('calc'); toast('به ماشین‌حساب اضافه شد'); return; }
+  const ap = e.target.closest('[data-addplan]'); if(ap){ const plan=PLANS.find(x=>x.id===ap.dataset.addplan); rows = plan.items.map(([id,q])=>({id, tier:1, qty:+q.toFixed(2)})); const {list}=planCalc(plan); $('disc').value = Math.round((list-plan.price)/list*100); renderRows(); compute(); closeModal(); go('calc'); toast('اجزای پلن در ماشین‌حساب'); return; }
+  const pf = e.target.closest('[data-pfgo]'); if(pf){ closeModal(); go('portfolio'); pfTab(pf.dataset.pfgo); return; }
+  const pt = e.target.closest('[data-pf]'); if(pt){ pfTab(pt.dataset.pf); return; }
+  const bk = e.target.closest('[data-bk]'); if(bk){ book(+bk.dataset.bk); return; }
+  if(e.target.closest('#bookMain')){ lightbox(BOOK.map(b=>({k:b[0], t:b[1]})), bi); return; }
+  const cs = e.target.closest('[data-case]'); if(cs){ const c = CASES[+cs.dataset.case]; lightbox(c.pages.map(k=>({k, t:c.t})), 0); return; }
+  const ph = e.target.closest('[data-ph]'); if(ph){ phase(+ph.dataset.ph); return; }
+  const gf = e.target.closest('[data-gf]'); if(gf){ gal(gf.dataset.gf); return; }
+  const gi = e.target.closest('[data-g]'); if(gi){ const list = GAL.filter(g=>galCur==='همه'||g[1]===galCur).map(g=>({k:g[0], t:g[2]})); lightbox(list, +gi.dataset.g); return; }
+  const lb = e.target.closest('[data-lb]'); if(lb){ const n = (LB.i + +lb.dataset.lb + LB.list.length) % LB.list.length; lightbox(LB.list, n); return; }
+  const wb = e.target.closest('[data-wbiz]'); if(wb){ W.biz=wb.dataset.wbiz; wRender(); return; }
+  const ws = e.target.closest('[data-wsize]'); if(ws){ W.size=+ws.dataset.wsize; wRender(); return; }
+  const wp = e.target.closest('[data-wprob]'); if(wp){ const id=wp.dataset.wprob; W.probs.has(id)?W.probs.delete(id):W.probs.add(id); wRender(); return; }
+  const wm = e.target.closest('[data-wmode]'); if(wm){ W.mode=wm.dataset.wmode; W.off.clear(); wRender(); return; }
+});
+$('bPrev').onclick = e=>{ e.stopPropagation(); book(bi-1); };
+$('bNext').onclick = e=>{ e.stopPropagation(); book(bi+1); };
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ closeModal(); setMega(false); }
+  if(e.key==='Enter' && e.target.matches('[data-open][tabindex],[data-go][tabindex]')){ e.preventDefault(); e.target.click(); }
+  if(ov.classList.contains('on') && modal.classList.contains('wide') && (e.key==='ArrowLeft'||e.key==='ArrowRight')){ const n = (LB.i + (e.key==='ArrowLeft'?1:-1) + LB.list.length) % LB.list.length; lightbox(LB.list, n); }
+});
+
+/* ================= init ================= */
+$('panelSamples').innerHTML = linksHTML(P.panelS);
+renderServices(); renderPlans(); renderRows(); renderSliders(); renderWsplit(); renderTeamTable(); renderPortfolio(); wRender();
+let unlocked = false; try{ unlocked = sessionStorage.getItem('rg-int')==='1'; }catch(e){}
+setInternal(unlocked);
+go((location.hash||'#home').slice(1));
+pointCloud($('cloud'));
+</script>
+</body>
+</html>
